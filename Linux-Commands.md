@@ -27,6 +27,14 @@ kill -9 PID
 tail -f shows the last lines of a file
 Perfect for:
 
-application logs
-Kubernetes logs
-system troubleshooting
+application logs ➡️ Kubernetes logs ➡️ system troubleshooting
+
+### Basic usage
+```
+tail -f app.log # ➡️ Shows last 10 lines and keeps following
+```
+
+
+
+
+
