@@ -124,6 +124,17 @@ Add:
 ```
 */1 * * * * /home/ec2-user/hello.sh >> /home/ec2-user/hello.log 2>&1
 ```
+### TL;DR
+```
+✔️ Use > when you want to replace a file
+✔️ Use >> when you don’t want to lose previous output
+```
+### 🔍 Compare > vs >>
+```
+Symbol   	Meaning          	What happens
+  >	      overwrite	          Old output ❌ deleted
+  >>	    append            	Old output ✅ preserved
+```
 🔍 Breakdown:
 
 */1 * * * * → every 1 minute
