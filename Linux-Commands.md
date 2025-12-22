@@ -23,3 +23,10 @@ du -sh dir
 kill PID
 kill -9 PID
 ```
+### 🔍 tail -f (Follow logs in real time)
+tail -f shows the last lines of a file
+Perfect for:
+
+application logs
+Kubernetes logs
+system troubleshooting
