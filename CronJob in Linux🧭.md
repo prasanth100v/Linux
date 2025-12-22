@@ -91,3 +91,55 @@ chmod +x /home/user/backup.sh
 ```
 ❌ Bad: backup.sh      ✅ Good: /home/user/backup.sh
 ```
+
+### 1️⃣ Create the script
+```
+vi hello.sh
+```
+```
+#!/bin/bash
+
+echo "welcome to KK FUNDA"
+echo "today date is:"
+date
+uptime
+```
+### 2️⃣ How to run the shell script
+✅ Method 1: Using sh (no execute permission needed) ✔️ Works even without chmod
+```
+sh hello.sh
+```
+✅ Method 2: Using ./ Give execute permission : x = executable ✔️
+```
+chmod u+x hello.sh
+./hello.sh
+```
+✔️ This is the correct way for cron jobs
+### Add cron job (every 1 minute)
+Edit crontab:
+```
+crontab -e
+```
+Add:
+```
+*/1 * * * * /home/ec2-user/hello.sh >> /home/ec2-user/hello.log 2>&1
+```
+🔍 Breakdown:
+
+*/1 * * * * → every 1 minute
+
+/home/ec2-user/hello.sh → absolute path (mandatory)
+
+>> hello.log → append output
+
+2>&1 → capture errors too (VERY IMPORTANT)
+
+### Validate cron job
+Check cron list:
+```
+crontab -l
+```
+Check logs after a minute:
+```
+tail -f /home/ec2-user/hello.log
+```
