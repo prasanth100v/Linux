@@ -33,7 +33,11 @@ root
 ec2-user
 prasanth
 ```
+### 🔐 Best Practice (Production / Servers)
 
+✔️ Use /etc/cron.allow only
+✔️ Add only required users
+✔️ Keep /etc/cron.deny empty or remove it
 ###  Cron job syntax (very important)
 ```
 * * * * * command_to_run
