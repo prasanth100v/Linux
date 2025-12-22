@@ -13,6 +13,27 @@ Restart a service daily
 ```
 System cron jobs are in /etc/crontab or /etc/cron.d/
 ```
+### 🔑 How cron access actually works in Linux
+There are two files that control who can use cron:
+
+/etc/cron.allow
+
+/etc/cron.deny
+
+### 1️⃣ If /etc/cron.allow exists
+➡️ ONLY users listed in this file can use cron ➡️ All other users are blocked, even if they’re not in cron.deny
+# Now add allowed users:
+```
+sudo touch /etc/cron.allow
+sudo vi /etc/cron.allow
+```
+Example:
+```
+root
+ec2-user
+prasanth
+```
+
 ###  Cron job syntax (very important)
 ```
 * * * * * command_to_run
