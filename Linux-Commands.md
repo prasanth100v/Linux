@@ -42,6 +42,17 @@ kubectl logs -f pod-name       ➡️ Kubernetes pod logs
  ```
 find /var/log -name "*.log"
 ```
+### 🔹 The command  (Shows system memory usage Refresh every 5 seconds)
+```
+free -hs 5
+watch free -h         # alternative live view
+```
+### 🔹 Stop the command
+CTRL + C
+
+
+
+
 
 ### grep – alternative for simple filtering
 grep is the BEST alternative for awk/sed when your goal is only simple filtering.
