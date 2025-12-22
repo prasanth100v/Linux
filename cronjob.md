@@ -1,4 +1,4 @@
-🔹 Cron job syntax (very important)
+###  Cron job syntax (very important)
 ```
 * * * * * command_to_run
 │ │ │ │ │
