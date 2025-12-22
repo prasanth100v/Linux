@@ -50,9 +50,20 @@ watch free -h         # alternative live view
 ### 🔹 Stop the command
    CTRL + C
 
-
-
-
+### wget is a command-line tool in Linux used to download files from the internet (HTTP, HTTPS, FTP).
+🔹 Most Common Uses
+1️⃣ Download a file ➡️ Saves file.zip in the current directory
+```
+wget https://example.com/file.zip
+```
+2️⃣ Download & save with a custom name
+```
+wget -O myfile.zip https://example.com/file.zip
+```
+3️⃣ Download to a specific directory
+```
+wget -P /opt/downloads https://example.com/file.zip
+```
 
 ### grep – alternative for simple filtering
 grep is the BEST alternative for awk/sed when your goal is only simple filtering.
