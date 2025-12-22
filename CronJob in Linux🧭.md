@@ -33,7 +33,9 @@ sudo systemctl enable cron
 ```
 ### STEP 2: Open crontab editor
 ```
-crontab -e
+crontab -e      # Edit your personal cron jobs
+crontab -l      # List your cron jobs
+crontab -r      # Remove all cron jobs (be careful!)
 ```
 ### STEP 3: Add your first cron job (examples)
 ▶ Example 1: Run script every day at 2 AM
