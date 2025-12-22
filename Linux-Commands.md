@@ -37,6 +37,12 @@ tail -f app1.log app2.log      ➡️ Follow multiple files
 tail -f app.log | grep ERROR   ➡️ Watch errors only
 kubectl logs -f pod-name       ➡️ Kubernetes pod logs
 ```
+### find — find files/directories
+ Find a file by name
+ ```
+find /var/log -name "*.log"
+```
 
+### grep – alternative for simple filtering
 
 
