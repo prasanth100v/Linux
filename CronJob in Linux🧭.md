@@ -9,7 +9,10 @@ Run a backup every night
 Clean logs every week
 
 Restart a service daily
-
+### For system-wide crontab:
+```
+System cron jobs are in /etc/crontab or /etc/cron.d/
+```
 ###  Cron job syntax (very important)
 ```
 * * * * * command_to_run
