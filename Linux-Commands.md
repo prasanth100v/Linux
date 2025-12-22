@@ -11,3 +11,15 @@ rm -rf dir# force delete directory
 cp src dst# copy
 mv src dst# move / rename
 ```
+### Process & System Monitoring
+```
+ps -ef
+top
+htop
+uptime
+free -m
+df -h
+du -sh dir
+kill PID
+kill -9 PID
+```
