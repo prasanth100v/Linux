@@ -44,5 +44,8 @@ find /var/log -name "*.log"
 ```
 
 ### grep – alternative for simple filtering
-
-
+grep is the BEST alternative for awk/sed when your goal is only simple filtering.
+1️⃣ Basic filtering
+```
+grep ERROR app.log       👉 Shows lines containing ERROR
+```
