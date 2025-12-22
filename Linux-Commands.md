@@ -29,9 +29,9 @@ Perfect for:
 
 application logs ➡️ Kubernetes logs ➡️ system troubleshooting
 
-### Basic usage
+### Basic usage  ➡️ Shows last 10 lines and keeps following
 ```
-tail -f app.log # ➡️ Shows last 10 lines and keeps following
+tail -f app.log 
 ```
 
 
