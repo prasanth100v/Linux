@@ -10,7 +10,6 @@ Clean logs every week
 
 Restart a service daily
 
-
 ###  Cron job syntax (very important)
 ```
 * * * * * command_to_run
@@ -20,4 +19,45 @@ Restart a service daily
 │ │ └────── Day of month (1–31)
 │ └──────── Hour (0–23)
 └────────── Minute (0–59)
+```
+
+### STEP 1: Check if cron service is running
+```
+systemctl status cron        # Ubuntu / Debian
+systemctl status crond       # RHEL / CentOS / Amazon Linux
+```
+If not running:
+```
+sudo systemctl start cron
+sudo systemctl enable cron
+```
+### STEP 2: Open crontab editor
+```
+crontab -e
+```
+### STEP 3: Add your first cron job (examples)
+▶ Example 1: Run script every day at 2 AM
+```
+0 2 * * * /home/user/backup.sh
+```
+▶ Example 2: Run every 5 minutes
+```
+*/5 * * * * /home/user/health_check.sh
+```
+### STEP 4: Save and exit
+```
+vi → :wq   #Cron installs automatically 🎉
+```
+### STEP 5: Verify cron jobs
+```
+crontab -l
+```
+### STEP 6: Make sure script is executable
+```
+chmod +x /home/user/backup.sh
+```
+⚠️ Cron will NOT run non-executable scripts.
+### STEP 8: Use absolute paths (VERY IMPORTANT)
+```
+❌ Bad: backup.sh      ✅ Good: /home/user/backup.sh
 ```
