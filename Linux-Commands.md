@@ -48,7 +48,7 @@ free -hs 5
 watch free -h         # alternative live view
 ```
 ### 🔹 Stop the command
-CTRL + C
+   CTRL + C
 
 
 
