@@ -1,3 +1,16 @@
+### ✅ What is a Cron Job?
+
+A cron job is a scheduled task that runs automatically at a fixed time or interval (minutes, hours, days, etc.).
+
+Examples:
+
+Run a backup every night
+
+Clean logs every week
+
+Restart a service daily
+
+
 ###  Cron job syntax (very important)
 ```
 * * * * * command_to_run
