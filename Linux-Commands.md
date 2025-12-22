@@ -29,12 +29,14 @@ Perfect for:
 
 application logs ➡️ Kubernetes logs ➡️ system troubleshooting
 
-### Basic usage  ➡️ Shows last 10 lines and keeps following
+### Basic usage  
 ```
-tail -f app.log 
+tail -f app.log                ➡️ Shows last 10 lines and keeps following
+tail -n 50 -f app.log          ➡️ Show last 50 lines
+tail -f app1.log app2.log      ➡️ Follow multiple files  
+tail -f app.log | grep ERROR   ➡️ Watch errors only
+kubectl logs -f pod-name       ➡️ Kubernetes pod logs
 ```
-
-
 
 
 
