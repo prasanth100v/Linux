@@ -64,6 +64,24 @@ wget -O myfile.zip https://example.com/file.zip
 ```
 wget -P /opt/downloads https://example.com/file.zip
 ```
+### Install a package on RHEL / CentOS / Amazon Linux.
+
+| Command                    | Purpose                |
+| -------------------------- | ---------------------- |
+| `sudo yum install nginx`   | Install nginx          |
+| `sudo yum remove nginx`    | Uninstall nginx        |
+| `sudo yum reinstall nginx` | Reinstall same package |
+| `sudo yum update nginx`    | Update nginx only      |
+| `sudo yum update`          | Update all packages    |
+
+
+
+
+
+
+
+
+
 
 ### grep – alternative for simple filtering
 grep is the BEST alternative for awk/sed when your goal is only simple filtering.
