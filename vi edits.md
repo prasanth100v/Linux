@@ -12,10 +12,29 @@ sudo vi /etc/hosts        ✔️ File opens and saves successfully
  Powerful ⚠️ — mistakes can break the system
 ```
 
+### 📝 Example: Add a user to sudo
+Using visudo: Never edit /etc/sudoers directly with vi. Always use visudo.
+```
+sudo visudo
+```
+Add at the bottom:
+```
+prasanth ALL=(ALL) ALL
+```
+Meaning:
+```
+prasanth → username
+ALL → any host
+(ALL) → any user
+ALL → any command
+```
+🧠 Pro tip (even safer)
 
-
-
-
+### Instead of editing /etc/sudoers directly, create a file:
+```
+sudo visudo -f /etc/sudoers.d/prasanth
+```
+This is:  ✔️Cleaner  ✔️Safer  ✔️Easier to manage
 
 
 
