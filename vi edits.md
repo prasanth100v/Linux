@@ -1,5 +1,6 @@
 ### Use vi for normal work. Use sudo vi only for system files.
 vi edits a file with your normal user permissions.
+
 sudo vi edits a file with root (administrator) permissions.
 ### 🔹 vi (Normal user)   Opens a file using your current user  :   Safer for everyday work  (Code, scripts, docs)
 ```
