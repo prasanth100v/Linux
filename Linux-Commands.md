@@ -201,6 +201,34 @@ Powerful navigation keys
 | `G`           | Go to end             |
 | `q`           | Quit                  |
 
+### 🔄 nohup sh — what it means & how to use it
+
+nohup sh starts a shell (sh) that ignores hangup signals, so anything you run inside it keeps running after you log out.
+```
+nohup sh demo.sh &
+```
+Redirect output (best practice)
+```
+  nohup sh demo.sh > demo.log 2>&1 &
+```
+🔹 Check status
+```
+ps -ef | grep demo.sh
+echo $!                    #if you just started it
+```
+🔹 Stop the process
+```
+kill PID
+kill -9 PID
+```
+### 🔑 Differences you should know
+| Command                | Behavior                           |
+| ---------------------- | ---------------------------------- |
+| `nohup sh`             | Interactive shell immune to logout |
+| `nohup sh script.sh &` | Run script safely in background    |
+| `sh script.sh`         | Stops on logout                    |
+| `./script.sh`          | Needs execute permission           |
+
 
 ### grep – alternative for simple filtering
 grep is the BEST alternative for awk/sed when your goal is only simple filtering.
