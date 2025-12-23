@@ -121,8 +121,85 @@ wget -P /opt/downloads https://example.com/file.zip
 | Change group owner        | `sudo chown :group file`       | Group ownership       |
 | Change both               | `sudo chown user:group file`   | Most common           |
 
+### 🧾 ps (Process Status) – Commands Table
+| **Task**                        | **Command**            | **What it Shows**       |
+| ------------------------------- | ---------------------- | ----------------------- |
+| Show processes of current shell | `ps`                   | Only current terminal   |
+| Show all processes (BSD style)  | `ps aux`               | All users, full details |
+| Show all processes (SysV style) | `ps -ef`               | All users with PPID     |
+| Show tree format                | `ps -ef --forest`      | Parent-child hierarchy  |
+| Show processes of a user        | `ps -u username`       | User-owned processes    |
+| Search process by name          | `ps -ef \| grep nginx` | Find specific process   |
+| Sort by CPU usage               | `ps aux --sort=-%cpu`  | High CPU first          |
+| Sort by memory usage            | `ps aux --sort=-%mem`  | High memory first       |
+| Watch live output               | `watch ps -ef`         | Refresh every 2 sec     |
 
+### 🧾 kill – Commands Table
+| **Task**                | **Command**         | **Signal / Behavior**  |
+| ----------------------- | ------------------- | ---------------------- |
+| Gracefully stop process | `kill PID`          | SIGTERM (15)           |
+| Force kill process      | `kill -9 PID`       | SIGKILL (9)            |
+| Reload process config   | `kill -HUP PID`     | SIGHUP                 |
+| Pause process           | `kill -STOP PID`    | SIGSTOP                |
+| Resume process          | `kill -CONT PID`    | SIGCONT                |
+| Kill process by name    | `killall nginx`     | All matching processes |
+| Kill user’s processes   | `pkill -u username` | User scope             |
+| Kill by pattern         | `pkill -f demo.sh`  | Match command line     |
 
+### 🆔 PID (Process ID)  Every process has one PID
+
+PID is a unique number assigned by Linux to each running process.
+The OS uses it to track, manage, and control processes.
+🔍 How to find a PID
+| Task                        | Command                |
+| --------------------------- | ---------------------- |
+| Show current shell PID      | `echo $$`              |
+| List all processes with PID | `ps -ef`               |
+| Find PID by process name    | `ps -ef \| grep nginx` |
+| Find PID quickly            | `pgrep nginx`          |
+| Interactive view            | `top` / `htop`         |
+
+### 🧠 Special PIDs you should know
+| PID  | Meaning                        |
+| ---- | ------------------------------ |
+| `1`  | Init / systemd (first process) |
+| `$$` | Current shell PID              |
+| `0`  | Kernel process (not killable)  |
+
+### 🔑 Useful signal reference
+| Signal  | Number | Meaning        |
+| ------- | ------ | -------------- |
+| SIGTERM | 15     | Graceful stop  |
+| SIGKILL | 9      | Immediate stop |
+| SIGHUP  | 1      | Reload config  |
+| SIGSTOP | 19     | Pause          |
+| SIGCONT | 18     | Continue       |
+
+### 🔐 Permissions rule
+```
+You can kill your own processes
+To kill other users’ processes, use:  sudo kill PID
+```
+### 📄 more and less command
+
+Both are pagers: they display long text one screen at a time so your terminal doesn’t flood.
+```
+more → older, simpler      ✔️ less → newer, powerful (and ironically “more” 😄) command
+```
+```
+Basic usage : less filename
+less doesn’t load the full file → fast & memory-efficient
+Use less instead of cat for big files
+```
+Powerful navigation keys
+| Key           | Action                |
+| ------------- | --------------------- |
+| `Space` / `f` | Forward one page      |
+| `b`           | Back one page         |
+| `↑ ↓`         | Line by line          |
+| `g`           | Go to start           |
+| `G`           | Go to end             |
+| `q`           | Quit                  |
 
 
 ### grep – alternative for simple filtering
