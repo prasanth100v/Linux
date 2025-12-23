@@ -101,6 +101,28 @@ wget -P /opt/downloads https://example.com/file.zip
 | Set account expiry     | `sudo usermod -e 2025-12-31 username`   | YYYY-MM-DD                                        |
 | Show user info         | `id username`                           | UID, GID, groups                                  |
 
+👥 Group Management
+| **Task**               | **Command**                           | **Notes**                     |
+| ---------------------- | ------------------------------------- | ----------------------------- |
+| Create group           | `sudo groupadd groupname`             | Creates entry in `/etc/group` |
+| Create group with GID  | `sudo groupadd -g 2000 groupname`     | Fixed GID                     |
+| Delete group           | `sudo groupdel groupname`             | Must not be primary group     |
+| Rename group           | `sudo groupmod -n newgroup oldgroup`  | GID unchanged                 |
+| Change group GID       | `sudo groupmod -g 3000 groupname`     | Be careful with files         |
+| Add user to group      | `sudo usermod -aG groupname username` | `-a` is IMPORTANT             |
+| Remove user from group | `sudo gpasswd -d username groupname`  | Safe removal                  |
+| List group members     | `getent group groupname`              | Reliable                      |
+| List all groups        | `cut -d: -f1 /etc/group`              | Local groups                  |
+
+🔐 Ownership & Permissions (related but essential)
+| **Task**                  | **Command**                    | **Notes**             |
+| ------------------------- | ------------------------------ | --------------------- |
+| Change file owner         | `sudo chown user file`         | User ownership        |
+| Change group owner        | `sudo chown :group file`       | Group ownership       |
+| Change both               | `sudo chown user:group file`   | Most common           |
+
+
+
 
 
 ### grep – alternative for simple filtering
