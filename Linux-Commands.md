@@ -77,9 +77,29 @@ wget -P /opt/downloads https://example.com/file.zip
 
 
 
-
-
-
+### ✅ switches to root
+```
+❌ sudo su     → root with user environment
+✅ sudo su -   → root with root environment
+⭐ sudo -i     → Best option    ✔️ Recommended on modern systems
+✅ sudo systemctl restart nginx  → Single command as root (safest)  ✔️ No root shell needed
+```
+### 🧾 User & Group Management
+👤 User Management
+| **Task**               | **Command**                             | **Notes**                                         |
+| ---------------------- | --------------------------------------- | ------------------------------------------------- |
+| Create a user          | `sudo useradd username`                 | Basic user, no home by default (varies by distro) |
+| Create user with home  | `sudo useradd -m username`              | Creates `/home/username`                          |
+| Create user with UID   | `sudo useradd -u 1050 username`         | Useful for LDAP/NFS                               |
+| Set / change password  | `sudo passwd username`                  | Prompts securely                                  |
+| Delete user only       | `sudo userdel username`                 | Keeps home directory                              |
+| Delete user + home     | `sudo userdel -r username`              | Removes files                                     |
+| Lock user account      | `sudo usermod -L username`              | Disable login                                     |
+| Unlock user account    | `sudo usermod -U username`              | Enable login                                      |
+| Change login name      | `sudo usermod -l newname oldname`       | Home not renamed automatically                    |
+| Change home directory  | `sudo usermod -d /new/home -m username` | `-m` moves files                                  |
+| Set account expiry     | `sudo usermod -e 2025-12-31 username`   | YYYY-MM-DD                                        |
+| Show user info         | `id username`                           | UID, GID, groups                                  |
 
 
 
