@@ -6,9 +6,10 @@ sudo vi edits a file with root (administrator) permissions.
 vi myfile.txt
 If you try:    vi /etc/hosts   ➡️ You can open it, but saving will fail: E212: Can't open file for writing
 ```
-### 🔹 sudo vi (Root access) : Opens the file as root  ➡️ Can edit and save system/critical files, Config files : Powerful ⚠️ — mistakes can break the system
+### 🔹 sudo vi (Root access) : Opens the file as root  ➡️ Can edit and save system/critical files, Config files.
 ```
 sudo vi /etc/hosts        ✔️ File opens and saves successfully
+ Powerful ⚠️ — mistakes can break the system
 ```
 
 
