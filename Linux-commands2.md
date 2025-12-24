@@ -69,6 +69,29 @@ sudo yum update
 | CPU details    | `lscpu`             |
 | CPU info file  | `cat /proc/cpuinfo` |
 | Live CPU usage | `top` / `htop`      |
+| Memory usage         | `free -h`           |
+| Detailed memory      | `cat /proc/meminfo` |
+| Top memory processes | `top`               |
+| Disk usage          | `df -h`        |
+| Directory size      | `du -sh /path` |
+| Block devices       | `lsblk`        |
+| Mounted filesystems | `mount`        |
+| Partition info      | `fdisk -l`     |
+| IP addresses       | `ip a`                 |
+| Routing table      | `ip r`                 |
+| Connectivity test  | `ping google.com`      |
+| System uptime     | `uptime` |
+| Load average      | `uptime` |
+| Logged-in users   | `who`    |
+| Detailed sessions | `w`      |
+| Hardware summary | `lshw`        |
+| PCI devices      | `lspci`       |
+| USB devices      | `lsusb`       |
+| System clock     | `timedatectl` |
+| Current user  | `whoami` |
+| User sessions | `who`    |
+| Login history | `last`   |
+
 
 
 
