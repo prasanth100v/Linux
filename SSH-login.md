@@ -90,9 +90,24 @@ devuser:x:1001:1001::/home/devuser:/bin/bash
     👉 If shell is /sbin/nologin or /bin/false → SSH login blocked
 ```
 
+### 🔐 IAM-based access vs EC2 login — clear, real-world comparison
+| Layer             | IAM-based access               | EC2 login                          |
+| ----------------- | ------------------------------ | ---------------------------------- |
+| What it controls  | **AWS resources**              | **Linux OS on EC2**                |
+| Who authenticates | IAM User / Role                | Linux user (`ec2-user`, `devuser`) |
+| How               | IAM policies + temporary creds | SSH key / password                 |
+| Scope             | S3, EC2 API, RDS, EKS, etc.    | Files, processes, sudo             |
+| Audit             | CloudTrail                     | OS logs                            |
+| Best use          | Service-to-service access      | System administration              |
 
-
-
-
-
+```    
+ 🔑 IAM-based access (AWS side)  ➡️ IAM controls what EC2 can do in AWS.
+ 🧑‍💻 EC2 login (OS side)          ➡️ EC2 login controls who can use the Linux machine.
+```
+🚫 Common misunderstanding (very important)
+```
+❌ “I have IAM access, so I can log in to EC2”  ➡️ Wrong
+❌ “I can SSH into EC2, so I can access S3”     ➡️ Wrong
+```
+They are independent systems.
 
