@@ -105,6 +105,13 @@ sudo yum update
 | Reboot with delay | `sudo shutdown -r +5`   | Restart after 5 min |
 | Fast reboot       | `sudo systemctl reboot` | systemd way         |
 
+### 🔑 What is a UID?
+Every Linux user has a UID (integer number)
+```
+🔸 cat /etc/passwd:
+🔸 username:x:UID:GID:comment:home_directory:shell
+🔸 ec2-user:x:1000:1000:EC2 Default User:/home/ec2-user:/bin/bash   👉 Here, UID = 1000
+```
 
 
 
