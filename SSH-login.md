@@ -29,8 +29,8 @@ ls -l /home/devuser/.ssh/authorized_keys
 ```
 Expected output:
 ```
-drwx------ devuser devuser .ssh
--rw------- devuser devuser authorized_keys
+🔸drwx------ devuser devuser .ssh
+🔸-rw------- devuser devuser authorized_keys
 ```
 ### (EC2 Best Practice)
 ```
@@ -58,26 +58,26 @@ sudo systemctl restart sshd
 ### ✅ Login as devuser via MobaXterm
 ```
 Open MobaXterm → Session → SSH
-     Remote host: EC2_PUBLIC_IP / DNS
+     🔸Remote host: EC2_PUBLIC_IP / DNS
      ✅ Check Specify username → enter devuser
 Go to Advanced SSH settings
      ✅ Use private key
-        Select the same .pem key used for ec2-user
+     🔸 Select the same .pem key used for ec2-user
 Click OK → you’ll log in directly as devuser
 ```
 ✅ password is NOT required 👍 You’re using SSH key-based authentication, so no password prompt will appear.
 
 ### 🔐 Why no password?
 ```
-Because:
-Your public key is in /home/devuser/.ssh/authorized_keys
-Your private key (.pem) is configured in MobaXterm
-SSH matches the keys → login allowed
+🔸Because:
+    Your public key is in /home/devuser/.ssh/authorized_keys
+    Your private key (.pem) is configured in MobaXterm
+           SSH matches the keys → login allowed
 ```
 ```
-/etc/ssh/sshd_config
-PubkeyAuthentication yes
-PasswordAuthentication no
-sudo systemctl restart sshd        #Restart if changed
+🔸/etc/ssh/sshd_config
+     PubkeyAuthentication yes
+     PasswordAuthentication no
+🔸sudo systemctl restart sshd        #Restart if changed
 ```
 
