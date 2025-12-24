@@ -72,6 +72,7 @@ sudo yum update
 | Memory usage         | `free -h`           |
 | Detailed memory      | `cat /proc/meminfo` |
 | Top memory processes | `top`               |
+| Watch memory live    | `watch free -h`     | Refresh every 2 sec |
 | Disk usage          | `df -h`        |
 | Directory size      | `du -sh /path` |
 | Block devices       | `lsblk`        |
@@ -92,7 +93,17 @@ sudo yum update
 | User sessions | `who`    |
 | Login history | `last`   |
 
-
+### 🔌 Shutdown / Reboot Commands
+| Task                | Command               | Notes               |
+| ------------------- | --------------------- | ------------------- |
+| Shutdown now        | `sudo shutdown now`   | Immediate power off |
+| Shutdown with delay | `sudo shutdown +5`    | After 5 minutes     |
+| Shutdown at time    | `sudo shutdown 23:30` | Scheduled           |
+| Cancel shutdown     | `sudo shutdown -c`    | Cancel scheduled    |
+| Power off           | `sudo poweroff`       | Turns off machine   |
+| Reboot now        | `sudo reboot`           | Immediate restart   |
+| Reboot with delay | `sudo shutdown -r +5`   | Restart after 5 min |
+| Fast reboot       | `sudo systemctl reboot` | systemd way         |
 
 
 
