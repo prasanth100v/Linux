@@ -81,3 +81,18 @@ Click OK → you’ll log in directly as devuser
 🔸sudo systemctl restart sshd        #Restart if changed
 ```
 
+/bin/bash = interactive shell that allows a user to log in and run commands.
+🔍 Where /bin/bash appears
+```
+cat /etc/passwd:
+devuser:x:1001:1001::/home/devuser:/bin/bash
+    👉 If shell is /bin/bash → user can log in
+    👉 If shell is /sbin/nologin or /bin/false → SSH login blocked
+```
+
+
+
+
+
+
+
