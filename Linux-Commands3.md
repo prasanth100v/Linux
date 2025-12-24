@@ -77,6 +77,11 @@ sudo yum install libuser -y
 id prasanth          # Shows UID, GID, and group membership
 groups prasanth      # Lists all groups the user belongs to
 ```
+### 📥 stdin vs stdout
+```
+    stdin   —  (Standard Input)
+    stdout  —  (Standard Output)
+```
 
 
 
