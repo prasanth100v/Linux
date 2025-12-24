@@ -49,9 +49,11 @@ ssh -i your-key.pem devuser@<EC2_PUBLIC_IP>       📌 ssh -i mykey.pem devuser@
 ```
 sudo su - devuser
 ```
+### 🛠 If Login Fails (Quick Checklist)
+```
+sudo systemctl status sshd
 sudo systemctl restart sshd
-
-
+```
 ### ✅ Login as devuser via MobaXterm
 ```
 Open MobaXterm → Session → SSH
@@ -64,9 +66,17 @@ Click OK → you’ll log in directly as devuser
 ```
 ✅ password is NOT required 👍 You’re using SSH key-based authentication, so no password prompt will appear.
 
-
-
-
-
-
+### 🔐 Why no password?
+```
+Because:
+Your public key is in /home/devuser/.ssh/authorized_keys
+Your private key (.pem) is configured in MobaXterm
+SSH matches the keys → login allowed
+```
+```
+/etc/ssh/sshd_config
+PubkeyAuthentication yes
+PasswordAuthentication no
+sudo systemctl restart sshd        #Restart if changed
+```
 
