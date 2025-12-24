@@ -1,5 +1,6 @@
 ### SSH key-based login for devuser
 Copied SSH keys from ec2-user to devuser and correctly locked down ownership and permissions so SSH login works securely.
+
 1️⃣ Create .ssh directory   🔹 SSH will not work without this configuration directory
 ```
 sudo adduser devuser
