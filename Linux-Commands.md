@@ -114,6 +114,16 @@ wget -P /opt/downloads https://example.com/file.zip
 | List group members     | `getent group groupname`              | Reliable                      |
 | List all groups        | `cut -d: -f1 /etc/group`              | Local groups                  |
 
+📂 ls -l /home
+
+| **Task**               | **Command**                           | **output**                     |
+| ---------------------- | ------------------------------------- | ----------------------------- |
+| Lists all user home directories  | `ls -l /home`   | drwx------  5 prasanth prasanth 4096 Jan 10  prasanth |
+| All user accounts (system + normal users)  | `cat /etc/passwd`    | username:x:UID:GID:comment:home:shell |
+| All groups on the system          | `cat /etc/group`     | groupname:x:GID:user1,user2     |
+| Encrypted passwords          | `cat /etc/shadow`  | username:encrypted_pw:last_change:min:max:warn:inactive:expire |
+
+
 🔐 Ownership & Permissions (related but essential)
 | **Task**                  | **Command**                    | **Notes**             |
 | ------------------------- | ------------------------------ | --------------------- |
