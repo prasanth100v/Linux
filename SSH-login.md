@@ -111,3 +111,19 @@ devuser:x:1001:1001::/home/devuser:/bin/bash
 ```
 They are independent systems.
 
+### ✅ EC2 login through SSM (Session Manager) over SSH
+```
+❌ No SSH keys  ❌ No open port 22
+✅ IAM-based login to EC2 ✅ Reduced attack surface
+```
+### 🧑‍💻 How to connect 
+```
+🔹 AWS Console → EC2 → Connect → Session Manager → Click Connect
+```
+
+
+
+
+
+
+
