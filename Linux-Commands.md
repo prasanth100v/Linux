@@ -240,8 +240,3 @@ kill -9 PID
 | `./script.sh`          | Needs execute permission           |
 
 
-### grep – alternative for simple filtering
-grep is the BEST alternative for awk/sed when your goal is only simple filtering.
-```
-grep ERROR app.log       👉 Shows lines containing ERROR
-```
