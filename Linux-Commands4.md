@@ -77,6 +77,10 @@ find searches files & directories based on name, type, size, time, owner, permis
 | 12 | Search compressed logs   | `zgrep "ERROR" app.log.gz`                 | No unzip needed        |               |
 | 13 | Ignore binary files      | `grep -I "ERROR" /var/log/*`               | Safe scan              |               |
 | 14 | Filter running processes | `ps -ef                                    | grep nginx`            | Process check |
+| 15 | **Before** context       | `grep -B5 "error" demo.txt`                | 5 lines *before* each match |
+| 16 | **After** context        | `grep -A5 "error" demo.txt`                | 5 lines *after* each match  |
+| 17 | **Context**              | `grep -C5 "error" demo.txt`                | 5 lines *before & after*    |
+
 
 ### grep – alternative for simple filtering
 grep is the BEST alternative for awk/sed when your goal is only simple filtering.
