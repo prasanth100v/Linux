@@ -122,4 +122,36 @@ man command  👉  man ls 👉  Shows the full manual for the ls command.
 | Directory with spaces    | `cd "My Folder"` | Use quotes            |
 | Change & list            | `cd /etc && ls`  | Chain commands        |
 
+# rmdir = remove directory
+| **Purpose**                     | **Command**                            | **Explanation**             |
+| ------------------------------- | -------------------------------------- | --------------------------- |
+| Remove empty directory          | `rmdir testdir`                        | Deletes empty folder        |
+| Remove multiple directories     | `rmdir dir1 dir2`                      | Deletes multiple empty dirs |
+| Remove nested empty directories | `rmdir -p a/b/c`                       | Removes child → parent      |
+| Remove hidden directory         | `rmdir .secret`                        | Removes hidden empty dir    |
+
+# rm = remove
+### Used to delete files and directories in Linux.
+| **Purpose**                    | **Command**                       | **Explanation**          |
+| ------------------------------ | --------------------------------- | ------------------------ |
+| Remove a file                  | `rm file.txt`                     | Deletes file             |
+| Remove multiple files          | `rm f1.txt f2.txt`                | Deletes multiple files   ||
+| Force delete                   | `rm -f file.txt`                  | No confirmation ⚠️       |
+| Force recursive delete         | `rm -rf mydir`                    | ⚠️ Dangerous             |
+| Delete hidden files            | `rm .file`                        | Deletes hidden file      |
+| Deletes entire system          | `rm -rf /`                        | remove everything starting from root (/). ⚠️ VERY DANGEROUS |
+| Deletes everything in current directory    | `rm -rf *` | ⚠️ Removes all files & folders in the present working directory  |
+| System wipe         | `rm -rf /*`           | Deletes all top-level directories like /bin, /etc, /home, /var ⚠️ Dangerous  |
+
+
+
+
+
+
+
+
+
+
+
+
 
