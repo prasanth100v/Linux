@@ -1,4 +1,4 @@
-### 🔐 passwd Command
+# 🔐 passwd Command
 
 1️⃣ Set password for a user (as root)
 ```
@@ -39,7 +39,7 @@ Best practice:
 ✅ SSH keys → enabled
 ❌ Password login → disabled
 ```
-### 📋 chage Command 🔐 Password Expiry with chage command in Linux
+# 📋 chage Command 🔐 Password Expiry with chage command in Linux
 | Command                            | Purpose                               |
 | ---------------------------------- | ------------------------------------- |
 | `sudo chage -l devuser`            | Show password aging details           |
@@ -53,7 +53,7 @@ Best practice:
 | `cat /etc/shadow`                  | View updated values                   |
 
 
-### 🔍 What is lid in Linux?
+# 🔍 What is lid in Linux?
 lid stands for List IDs (identities). List all users List groups, It comes from the libuser package.
 
 📌 Common lid commands
@@ -64,11 +64,11 @@ lid -g devops      # list users in group devops
 lid -n             # show only names
 lid -G devuser     # show groups of a user
 ```
-If lid is not installed, install it :
+### If lid is not installed, install it :
 ```
 sudo yum install libuser -y
 ```
-### id vs groups
+# id vs groups
 | Command           | Shows UID | Shows GID | Shows Groups | Best Use          |
 | ----------------- | --------- | --------- | ------------ | ----------------- |
 | `id prasanth`     | ✅         | ✅         | ✅            | Debug permissions |
@@ -77,7 +77,7 @@ sudo yum install libuser -y
 id prasanth          # Shows UID, GID, and group membership
 groups prasanth      # Lists all groups the user belongs to
 ```
-### 📥 stdin vs stdout
+## 📥 stdin vs stdout
 ```
     stdin   —  (Standard Input)
     stdout  —  (Standard Output)
