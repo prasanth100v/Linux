@@ -83,8 +83,14 @@ groups prasanth      # Lists all groups the user belongs to
     stdout  —  (Standard Output)
 ```
 
-
-
+# 🖥️ 11. wc (Word Count)
+### The wc command counts lines, words, bytes, and characters in a file.
+```
+wc file.txt       # Show line, word, and character count
+wc -l file.txt    # Count number of lines
+wc -w file.txt    # Count number of words
+wc -c file.txt    # Count number of bytes/characters
+```
 
 
 
