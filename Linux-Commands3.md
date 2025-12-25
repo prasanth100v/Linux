@@ -108,5 +108,18 @@ man command  👉  man ls 👉  Shows the full manual for the ls command.
 | Create hidden directory      | `mkdir .secret`                | Hidden folder                            |
 
 
+# cd = change directory
+| **Purpose**              | **Command**      | **Explanation**       |
+| ------------------------ | ---------------- | --------------------- |
+| Go to home directory     | `cd`             | Takes you to `$HOME`  |
+| Go to specific directory | `cd /var/log`    | Absolute path         |
+| Go to parent directory   | `cd ..`          | One level up          |
+| Go up two levels         | `cd ../..`       | Two levels up         |
+| Go to previous directory | `cd -`           | Toggle last directory |
+| Go to root directory     | `cd /`           | Filesystem root       |
+| Go to home using tilde   | `cd ~`           | Same as `cd`          |
+| Go to user’s home        | `cd /home/user`  | Specific user         |
+| Directory with spaces    | `cd "My Folder"` | Use quotes            |
+| Change & list            | `cd /etc && ls`  | Chain commands        |
 
 
