@@ -143,7 +143,13 @@ man command  👉  man ls 👉  Shows the full manual for the ls command.
 | Deletes everything in current directory    | `rm -rf *` | ⚠️ Removes all files & folders in the present working directory  |
 | System wipe         | `rm -rf /*`           | Deletes all top-level directories like /bin, /etc, /home, /var ⚠️ Dangerous  |
 
-
+# touch command : Create empty files
+| **Purpose**           | **Command**                      | **Explanation**             |
+| --------------------- | -------------------------------- | --------------------------- |
+| Create empty file     | `touch file.txt`                 | Creates file if not exists  |
+| Create multiple files | `touch f1.txt f2.txt`            | Creates multiple files      |
+| Create file with path | `touch /tmp/test.log`            | Creates file in directory   |
+| Create hidden file    | `touch .env`                     | Hidden config file          |
 
 
 
