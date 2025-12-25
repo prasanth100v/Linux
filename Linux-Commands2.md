@@ -1,7 +1,7 @@
-### 🫗 tee Command in Linux
-  tee = see output + save output (at the same time)
+# 🫗 tee Command in Linux
+ ### tee = see output + save output (at the same time)
 
-### Common use cases (with examples)
+## Common use cases (with examples)
 ```
 1️⃣ View output and save it     You see the listing on screen   It’s also saved to output.txt   
           🔸 ls -l | tee output.txt
@@ -19,12 +19,12 @@
           🔸 command | sudo tee /etc/config.conf  ➡️   echo "Hello" | sudo tee /etc/test.conf
 ```
 
-### uniq Command in Linux —  uniq filters duplicate lines
+# uniq Command in Linux —  uniq filters duplicate lines
 ```
 1️⃣ Remove duplicate lines        ➡️   sort names.txt | uniq
 3️⃣ Show only duplicate lines     ➡️  sort file.txt | uniq -d
 ```
-### 📦 zcat — view compressed files
+# 📦 zcat — view compressed files
 ✅ One-line memory trick  🔸 zcat = cat  🔸 zgrep = grep 
 
 Common examples
@@ -34,7 +34,7 @@ zcat app.log.gz | less          # safe for large logs
 zcat app.log.gz | head
 zcat app.log.gz | tail
 ```
-### 🔍 zgrep — search inside compressed files
+# 🔍 zgrep — search inside compressed files
 Common examples
 ```
 zgrep ERROR app.log.gz
@@ -43,7 +43,7 @@ zgrep -n ERROR app.log.gz       # show line numbers
 zgrep -c ERROR app.log.gz       # count matches
 zgrep "500" *.log.gz            # Search across many logs
 ```
-### 🌐 ping Command (Network Check) (internet connectivity)
+# 🌐 ping Command (Network Check) (internet connectivity)
 ```
 ping google.com
 ping 8.8.8.8
@@ -51,14 +51,14 @@ ping -c 4 google.com     # send 4 packets
 ping -i 2 8.8.8.8        # interval 2 sec
 ping -s 1000 8.8.8.8     # packet size
 ```
-### 📦 yum Command (Package Manager) 
-Installs, updates, removes software on RHEL / CentOS / Amazon Linux systems.
+# 📦 yum Command (Package Manager) 
+### Installs, updates, removes software on RHEL / CentOS / Amazon Linux systems.
 ```
 sudo yum install nginx
 sudo yum remove nginx
 sudo yum update
 ```
-### 🖥️ System Information – Commands
+# 🖥️ System Information – Commands
 | Task            | Command               |
 | --------------- | --------------------- |
 | OS details      | `cat /etc/os-release` |
@@ -93,7 +93,7 @@ sudo yum update
 | User sessions | `who`    |
 | Login history | `last`   |
 
-### 🔌 Shutdown / Reboot Commands
+# 🔌 Shutdown / Reboot Commands
 | Task                | Command               | Notes               |
 | ------------------- | --------------------- | ------------------- |
 | Shutdown now        | `sudo shutdown now`   | Immediate power off |
@@ -105,22 +105,11 @@ sudo yum update
 | Reboot with delay | `sudo shutdown -r +5`   | Restart after 5 min |
 | Fast reboot       | `sudo systemctl reboot` | systemd way         |
 
-### 🔑 What is a UID?
-Every Linux user has a UID (integer number)
+# 🔑 What is a UID?
+### Every Linux user has a UID (integer number)
 ```
 🔸 cat /etc/passwd:
 🔸 username:x:UID:GID:comment:home_directory:shell
 🔸 ec2-user:x:1000:1000:EC2 Default User:/home/ec2-user:/bin/bash   👉 Here, UID = 1000
 ```
-
-
-
-
-
-
-
-
-
-
-
 
