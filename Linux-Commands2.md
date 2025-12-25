@@ -7,7 +7,32 @@
 | `cat > file.txt`  | Create file            |
 | `cat >> file.txt` | Append to file  (add on, usually to the end of file )  |
 | `cat file1 file2 > combined.txt` | Merges file1 & file2   |
+| `tac file.txt ` | Show file content in reverse order   |
 
+
+# cp (copy) is used to copy files and directories from one location to another.
+## 📄 Copy Files and 📁 Copy Directories
+| Command                   | Description            |
+| ------------------------- | ---------------------- |
+| `cp file1.txt file2.txt`  | Copy file1 to file2    |
+| `cp file.txt /tmp/`       | Copy file to directory |
+| `cp file1 file2 /backup/` | Copy multiple files    |
+| `cp -r DevOps/ Backup/` | Copy directory recursively        |
+| `cp -a DevOps/ Backup/` | Copy with permissions & ownership |
+
+# mv = move or rename files and directories.
+| **Purpose**                | **Command**                              | **Explanation**                 |
+| -------------------------- | ---------------------------------------- | ------------------------------- |
+| Rename a file              | `mv old.txt new.txt`                     | Renames `old.txt` to `new.txt`  |
+| Move file to directory     | `mv file.txt /path/dir/`                 | Moves file to another directory |
+| Move & rename file         | `mv file.txt /path/dir/new.txt`          | Moves and renames file          |
+| Move multiple files        | `mv f1.txt f2.txt /backup/`              | Moves multiple files            |
+| Move a directory           | `mv mydir /opt/`                         | Moves entire directory          |
+| Rename a directory         | `mv olddir newdir`                       | Renames directory               |
+| Force overwrite            | `mv -f file.txt /backup/`                | No confirmation ⚠️              |
+| Prevent overwrite          | `mv -n file.txt /backup/`                | Skip if file exists             |
+| Move using wildcard        | `mv *.log /logs/`                        | Moves all `.log` files          |
+| Move hidden files          | `mv .[^.]* /backup/`                     | Moves hidden files              |
 
 
 # 🫗 tee Command in Linux
