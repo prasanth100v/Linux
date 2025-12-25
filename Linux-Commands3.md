@@ -1,13 +1,13 @@
 # 🔐 passwd Command
 
-1️⃣ Set password for a user (as root)
+### 1️⃣ Set password for a user (as root)
 ```
 sudo passwd devuser
       You’ll be prompted:
 New password:
 Retype new password:
 ```
-2️⃣ Change your own password
+### 2️⃣ Change your own password
 ```
 passwd
   Prompts:
@@ -15,16 +15,16 @@ Current password:
 New password:
 Retype new password:
 ```
-3️⃣ Verify password status
+### 3️⃣ Verify password status
 ```
 sudo passwd -S devuser
 ```
-5️⃣ Lock / Unlock a user password
+### 5️⃣ Lock / Unlock a user password
 ```
 sudo passwd -l devuser   # lock
 sudo passwd -u devuser   # unlock
 ```
-6️⃣ Allow / Disable password login via SSH
+### 5️⃣ Allow / Disable password login via SSH
 ```
 Edit SSH config:
 sudo vi /etc/ssh/sshd_config
@@ -83,7 +83,7 @@ groups prasanth      # Lists all groups the user belongs to
     stdout  —  (Standard Output)
 ```
 
-# 🖥️ 11. wc (Word Count)
+# 🖥️ wc (Word Count)
 ### The wc command counts lines, words, bytes, and characters in a file.
 ```
 wc file.txt       # Show line, word, and character count
@@ -92,11 +92,20 @@ wc -w file.txt    # Count number of words
 wc -c file.txt    # Count number of bytes/characters
 ```
 
-
-
-
-
-
+# man command is used to display the manual pages of Linux commands
+```
+man command  👉  man ls 👉  Shows the full manual for the ls command.
+```
+# mkdir = make directory
+  Used to create new directories (folders) in Linux.
+| **Purpose**                  | **Command**                    | **Explanation**                          |
+| ---------------------------- | ------------------------------ | ---------------------------------------- |
+| Create a directory           | `mkdir mydir`                  | Creates `mydir`                          |
+| Create multiple directories  | `mkdir dir1 dir2 dir3`         | Creates multiple folders                 |
+| Create nested directories    | `mkdir -p /opt/app/logs`       | Creates parent directories automatically |
+| Set permissions              | `mkdir -m 755 secure_dir`      | Sets permissions at creation             |
+| Create directory with spaces | `mkdir "My Folder"`            | Handles spaces                           |
+| Create hidden directory      | `mkdir .secret`                | Hidden folder                            |
 
 
 
