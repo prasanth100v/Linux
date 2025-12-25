@@ -81,6 +81,67 @@ find searches files & directories based on name, type, size, time, owner, permis
 ### grep – alternative for simple filtering
 grep is the BEST alternative for awk/sed when your goal is only simple filtering.
 
+# 🔍 tail -f (Follow logs in real time)
+### tail -f shows the last lines of a file
+## Perfect for:
+application logs ➡️ Kubernetes logs ➡️ system troubleshooting
+
+## Basic usage  
+```
+tail -f app.log                ➡️ Shows last 10 lines and keeps following
+tail -n 50 -f app.log          ➡️ Show last 50 lines
+tail -f app1.log app2.log      ➡️ Follow multiple files  
+tail -f app.log | grep ERROR   ➡️ Watch errors only
+kubectl logs -f pod-name       ➡️ Kubernetes pod logs
+```
+
+# 📄 more and less command
+### Both are pagers: they display long text one screen at a time so your terminal doesn’t flood.
+```
+more → older, simpler      ✔️ less → newer, powerful (and ironically “more” 😄) command
+```
+```
+Basic usage : less filename
+less doesn’t load the full file → fast & memory-efficient
+Use less instead of cat for big files
+```
+Powerful navigation keys
+| Key           | Action                |
+| ------------- | --------------------- |
+| `Space` / `f` | Forward one page      |
+| `b`           | Back one page         |
+| `↑ ↓`         | Line by line          |
+| `g`           | Go to start           |
+| `G`           | Go to end             |
+| `q`           | Quit                  |
+
+
+# 🔄 nohup sh — what it means & how to use it
+### nohup sh starts a shell (sh) that ignores hangup signals, so anything you run inside it keeps running after you log out.
+```
+nohup sh demo.sh &
+```
+Redirect output (best practice)
+```
+  nohup sh demo.sh > demo.log 2>&1 &
+```
+🔹 Check status
+```
+ps -ef | grep demo.sh
+echo $!                    #if you just started it
+```
+🔹 Stop the process
+```
+kill PID
+kill -9 PID
+```
+## 🔑 Differences you should know
+| Command                | Behavior                           |
+| ---------------------- | ---------------------------------- |
+| `nohup sh`             | Interactive shell immune to logout |
+| `nohup sh script.sh &` | Run script safely in background    |
+| `sh script.sh`         | Stops on logout                    |
+| `./script.sh`          | Needs execute permission           |
 
 
 
