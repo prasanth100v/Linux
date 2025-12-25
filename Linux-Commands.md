@@ -37,11 +37,15 @@ tail -f app1.log app2.log      ➡️ Follow multiple files
 tail -f app.log | grep ERROR   ➡️ Watch errors only
 kubectl logs -f pod-name       ➡️ Kubernetes pod logs
 ```
-### find — find files/directories
- Find a file by name
- ```
-find /var/log -name "*.log"
-```
+#🔹 w Command in Linux
+The w command shows who is logged in and what they are doing right now.
+| Command      | Explanation                         |
+| ------------ | ----------------------------------- |
+| `w`          | Show all logged-in users            |
+| `w username` | Show activity of a specific user    |
+| `w -i`       | Show IP address instead of hostname |
+
+
 ### 🔹 The command  (Shows system memory usage Refresh every 5 seconds)
 ```
 free -hs 5
