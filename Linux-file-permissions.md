@@ -25,8 +25,7 @@
 | `umask u=rwx,g=rw,o=`   | Owner full, group read/write, others none |
 | `umask u=rw,g=r,o=`     | Files with restricted permissions         |
 
-#### umask defines default permission removal for new files, 
-#### while chmod changes permissions of existing files or directories.
+#### umask defines default permission removal for new files, while chmod changes permissions of existing files or directories.
 
 
 
