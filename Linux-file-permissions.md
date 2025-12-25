@@ -74,9 +74,50 @@ chmod -R 755 mydir
 | ------ | --------------------------------------------- |
 | `-R`   | Apply permissions to all subdirectories/files |
 
+## Full permission for all
+```
+chmod 777 devops.txt
+chmod ugo+rwx devops.txt
+```
+⚠️ Security risk – avoid in production
 
+## ➕ Add Permissions  ➖ Remove Permissions
+```
+chmod u+x file.txt   # Add execute for user
+chmod g+w file.txt   # Add write for group
+chmod o-r file.txt   # Remove read from others
+chmod u-w file.txt   # Remove write from user
+```
+🎯 Set Permissions Explicitly
+```
+chmod u=rwx,g=rx,o=r file.txt
+```
+# 👑 chown Command (Change Owner)
+### chown changes the owner and/or group of files and directories.
+📌 ONLY root user can use chown
 
+🔹 Basic Syntax
+```
+chown root:devops devops.txt          🔸 Owner → root   Group → devops
+chown -R root:root DevOps/
+```
+### 🔹 Recursive ownership change  👉 Changes ownership of directory + all contents
 
+# 👥 chgrp Command (Change Group)
+  Only root user can use chgrp
+
+🔹 Syntax
+```
+chgrp wheel devops.txt      ➡ Group changed to wheel
+```
+
+# 📄 file Command
+Purpose: Check what type of file it is (text, binary, script, image, etc.)
+
+🔹 Syntax
+```
+file filename   👉 Example:  file demo.txt
+```
 
 
 
