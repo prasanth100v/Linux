@@ -78,7 +78,8 @@ find searches files & directories based on name, type, size, time, owner, permis
 | 13 | Ignore binary files      | `grep -I "ERROR" /var/log/*`               | Safe scan              |               |
 | 14 | Filter running processes | `ps -ef                                    | grep nginx`            | Process check |
 
-
+### grep – alternative for simple filtering
+grep is the BEST alternative for awk/sed when your goal is only simple filtering.
 
 
 
