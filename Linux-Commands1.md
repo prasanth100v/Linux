@@ -1,4 +1,4 @@
- ### Most Frequently Used Linux Commands (DevOps-Focused) 🔥
+ # Most Frequently Used Linux Commands (DevOps-Focused) 🔥
  ```
 ls        # list files
 ls -l     # detailed list
@@ -11,7 +11,7 @@ rm -rf dir# force delete directory
 cp src dst# copy
 mv src dst# move / rename
 ```
-### Process & System Monitoring
+# Process & System Monitoring
 ```
 ps -ef
 top
@@ -24,8 +24,8 @@ kill PID
 kill -9 PID
 ```
 
-#🔹 w Command in Linux
-The w command shows who is logged in and what they are doing right now.
+# w Command in Linux
+### The w command shows who is logged in and what they are doing right now.
 | Command      | Explanation                         |
 | ------------ | ----------------------------------- |
 | `w`          | Show all logged-in users            |
@@ -33,15 +33,15 @@ The w command shows who is logged in and what they are doing right now.
 | `w -i`       | Show IP address instead of hostname |
 
 
-### 🔹 The command  (Shows system memory usage Refresh every 5 seconds)
+## Shows system memory usage Refresh every 5 seconds
 ```
 free -hs 5
 watch free -h         # alternative live view
 ```
-### 🔹 Stop the command
+## 🔹 Stop the command
    CTRL + C
 
-### wget is a command-line tool in Linux used to download files from the internet (HTTP, HTTPS, FTP).
+## wget is a command-line tool in Linux used to download files from the internet (HTTP, HTTPS, FTP).
 🔹 Most Common Uses
 1️⃣ Download a file ➡️ Saves file.zip in the current directory
 ```
@@ -55,7 +55,7 @@ wget -O myfile.zip https://example.com/file.zip
 ```
 wget -P /opt/downloads https://example.com/file.zip
 ```
-### Install a package on RHEL / CentOS / Amazon Linux.
+## Install a package on RHEL / CentOS / Amazon Linux.
 
 | Command                    | Purpose                |
 | -------------------------- | ---------------------- |
@@ -66,14 +66,14 @@ wget -P /opt/downloads https://example.com/file.zip
 | `sudo yum update`          | Update all packages    |
 
 
-### ✅ switches to root
+## ✅ switches to root
 ```
 ❌ sudo su     → root with user environment
 ✅ sudo su -   → root with root environment
 ⭐ sudo -i     → Best option    ✔️ Recommended on modern systems
 ✅ sudo systemctl restart nginx  → Single command as root (safest)  ✔️ No root shell needed
 ```
-### 🧾 User & Group Management
+# 🧾 User & Group Management
 👤 User Management
 | **Task**               | **Command**                             | **Notes**                                         |
 | ---------------------- | --------------------------------------- | ------------------------------------------------- |
@@ -90,7 +90,7 @@ wget -P /opt/downloads https://example.com/file.zip
 | Set account expiry     | `sudo usermod -e 2025-12-31 username`   | YYYY-MM-DD                                        |
 | Show user info         | `id username`                           | UID, GID, groups                                  |
 
-👥 Group Management
+# 👥 Group Management
 | **Task**               | **Command**                           | **Notes**                     |
 | ---------------------- | ------------------------------------- | ----------------------------- |
 | Create group           | `sudo groupadd groupname`             | Creates entry in `/etc/group` |
@@ -103,7 +103,7 @@ wget -P /opt/downloads https://example.com/file.zip
 | List group members     | `getent group groupname`              | Reliable                      |
 | List all groups        | `cut -d: -f1 /etc/group`              | Local groups                  |
 
-📂 ls -l /home
+# 📂 ls -l /home
 
 | **Task**               | **Command**                           | **output**                     |
 | ---------------------- | ------------------------------------- | ----------------------------- |
@@ -113,14 +113,14 @@ wget -P /opt/downloads https://example.com/file.zip
 | Encrypted passwords (Root only)   | `cat /etc/shadow`  | username:encrypted_pw:last_change:min:max:warn:inactive:expire |
 
 
-🔐 Ownership & Permissions (related but essential)
+# 🔐 Ownership & Permissions (related but essential)
 | **Task**                  | **Command**                    | **Notes**             |
 | ------------------------- | ------------------------------ | --------------------- |
 | Change file owner         | `sudo chown user file`         | User ownership        |
 | Change group owner        | `sudo chown :group file`       | Group ownership       |
 | Change both               | `sudo chown user:group file`   | Most common           |
 
-### 🧾 ps (Process Status) – Commands Table
+# 🧾 ps (Process Status) – Commands Table
 | **Task**                        | **Command**            | **What it Shows**       |
 | ------------------------------- | ---------------------- | ----------------------- |
 | Show processes of current shell | `ps`                   | Only current terminal   |
@@ -133,7 +133,7 @@ wget -P /opt/downloads https://example.com/file.zip
 | Sort by memory usage            | `ps aux --sort=-%mem`  | High memory first       |
 | Watch live output               | `watch ps -ef`         | Refresh every 2 sec     |
 
-### 🧾 kill – Commands Table
+# 🧾 kill – Commands Table
 | **Task**                | **Command**         | **Signal / Behavior**  |
 | ----------------------- | ------------------- | ---------------------- |
 | Gracefully stop process | `kill PID`          | SIGTERM (15)           |
@@ -145,11 +145,11 @@ wget -P /opt/downloads https://example.com/file.zip
 | Kill user’s processes   | `pkill -u username` | User scope             |
 | Kill by pattern         | `pkill -f demo.sh`  | Match command line     |
 
-### 🆔 PID (Process ID)  Every process has one PID
+# 🆔 PID (Process ID)  Every process has one PID
+### PID is a unique number assigned by Linux to each running process.
+### The OS uses it to track, manage, and control processes.
 
-PID is a unique number assigned by Linux to each running process.
-The OS uses it to track, manage, and control processes.
-🔍 How to find a PID
+## 🔍 How to find a PID
 | Task                        | Command                |
 | --------------------------- | ---------------------- |
 | Show current shell PID      | `echo $$`              |
@@ -158,14 +158,14 @@ The OS uses it to track, manage, and control processes.
 | Find PID quickly            | `pgrep nginx`          |
 | Interactive view            | `top` / `htop`         |
 
-### 🧠 Special PIDs you should know
+## 🧠 Special PIDs you should know
 | PID  | Meaning                        |
 | ---- | ------------------------------ |
 | `1`  | Init / systemd (first process) |
 | `$$` | Current shell PID              |
 | `0`  | Kernel process (not killable)  |
 
-### 🔑 Useful signal reference
+## 🔑 Useful signal reference
 | Signal  | Number | Meaning        |
 | ------- | ------ | -------------- |
 | SIGTERM | 15     | Graceful stop  |
