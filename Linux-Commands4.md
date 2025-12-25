@@ -95,6 +95,14 @@ tail -f app.log | grep ERROR   ➡️ Watch errors only
 kubectl logs -f pod-name       ➡️ Kubernetes pod logs
 ```
 
+# 📌 head Command
+| **Purpose**                      | **Command**                        | **Explanation**          |
+| -------------------------------- | ---------------------------------- | ------------------------ |
+| Display first 10 lines (default) | `head file.txt`                    | Shows top 10 lines       |
+| Display first N lines            | `head -n 5 file.txt`               | Shows first 5 lines      |
+| Short option for lines           | `head -5 file.txt`                 | Same as `-n 5`           |
+| Display first N bytes            | `head -c 20 file.txt`              | Shows first 20 bytes     |
+
 # 📄 more and less command
 ### Both are pagers: they display long text one screen at a time so your terminal doesn’t flood.
 ```
