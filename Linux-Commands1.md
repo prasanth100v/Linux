@@ -1,28 +1,59 @@
- # Most Frequently Used Linux Commands (DevOps-Focused) 🔥
- ```
-ls        # list files
-ls -l     # detailed list
-ls -a     # show hidden files
-pwd       # current directory
-cd dir    # change directory
-mkdir dir # create directory
-rm file   # delete file
-rm -rf dir# force delete directory
-cp src dst# copy
-mv src dst# move / rename
-```
-# Process & System Monitoring
-```
-ps -ef
-top
-htop
-uptime
-free -m
-df -h
-du -sh dir
-kill PID
-kill -9 PID
-```
+# 🐧 Basic Essential Linux Commands
+| Command    | Example                  | Explanation                                            |
+| ---------- | ------------------------ | ------------------------------------------------------ |
+| `pwd`      | `pwd`                    | Shows the **current working directory**                |
+| `ls`       | `ls`                     | Lists files and directories                            |
+| `ls -l`    | `ls -l`                  | Lists files with **details** (permissions, size, date) |
+| `ls -a`    | `ls -a`                  | Shows **hidden files**                                 |
+| `cd`       | `cd /home/user`          | Changes directory                                      |
+| `cd ..`    | `cd ..`                  | Moves **one directory up**                             |
+| `mkdir`    | `mkdir test`             | Creates a new directory                                |
+| `rmdir`    | `rmdir test`             | Deletes an **empty directory**                         |
+| `touch`    | `touch file.txt`         | Creates an empty file                                  |
+| `cat`      | `cat file.txt`           | Displays file content                                  |
+| `less`     | `less file.txt`          | Reads large files page by page                         |
+| `head`     | `head file.txt`          | Shows first **10 lines**                               |
+| `head -20` | `head -20 file.txt`      | Shows first 20 lines                                   |
+| `tail`     | `tail file.txt`          | Shows last **10 lines**                                |
+| `tail -f`  | `tail -f log.txt`        | Live log monitoring                                    |
+| `cp`       | `cp a.txt b.txt`         | Copies file                                            |
+| `cp -r`    | `cp -r dir1 dir2`        | Copies directory                                       |
+| `mv`       | `mv a.txt /tmp/`         | Moves or renames file                                  |
+| `rm`       | `rm file.txt`            | Deletes file                                           |
+| `rm -r`    | `rm -r dir`              | Deletes directory recursively                          |
+| `rm -rf`   | `rm -rf dir`             | **Force delete** (⚠ dangerous)                         |
+| `clear`    | `clear`                  | Clears terminal screen                                 |
+| `history`  | `history`                | Shows command history                                  |
+| `man`      | `man ls`                 | Opens manual for a command                             |
+| `which`    | `which python`           | Shows command path                                     |
+| `whoami`   | `whoami`                 | Displays current user                                  |
+| `uname -a` | `uname -a`               | System & kernel info                                   |
+| `date`     | `date`                   | Shows current date & time                              |
+| `df -h`    | `df -h`                  | Disk usage (human readable)                            |
+| `free -h`  | `free -h`                | Memory usage                                           |
+| `top`      | `top`                    | Real-time process monitoring                           |
+| `ps`       | `ps -ef`                 | Shows running processes                                |
+| `kill`     | `kill 1234`              | Stops a process                                        |
+| `chmod`    | `chmod 755 file.sh`      | Changes file permissions                               |
+| `chown`    | `chown user:file.txt`    | Changes file owner                                     |
+| `grep`     | `grep "error" log.txt`   | Searches text                                          |
+| `wc`       | `wc -l file.txt`         | Counts lines                                           |
+| `echo`     | `echo "Hello"`           | Prints output                                          |
+| `tar`      | `tar -cvf a.tar dir/`    | Archive files                                          |
+| `zip`      | `zip a.zip file.txt`     | Compress files                                         |
+| `unzip`    | `unzip a.zip`            | Extract zip                                            |
+| `wget`     | `wget url`               | Download files                                         |
+| `curl`     | `curl url`               | Fetch API/web data                                     |
+| `ssh`      | `ssh user@ip`            | Remote server login                                    |
+
+# ⚠️ Most Dangerous Commands (Must Know)
+| Command     | Why Dangerous                        |                           |
+| ----------- | ------------------------------------ | ------------------------- |
+| `rm -rf /`  | Deletes entire system                |                           |
+| `rm -rf *`  | Deletes everything in current folder |                           |
+| `chmod 777` | Security risk                        |                           |
+| `kill -9 `  | Can crash system                     |                           |
+
 
 # w Command in Linux
 ### The w command shows who is logged in and what they are doing right now.
