@@ -19,9 +19,64 @@ find searches files & directories based on name, type, size, time, owner, permis
 | 13 | Find empty files                   | `find /app -type f -empty`                                  | Cleanup useless files                    |
 
 
+# ✂️ Linux sed Command – Complete DevOps Table
+### sed = Stream Editor
+  Used for search, replace, insert, delete, and modify text in files.
+  
+## 🧰 sed Commands & DevOps Use-Cases
+| #  | Use Case (DevOps)              | Command                                   | Explanation               |
+| -- | ------------------------------ | ----------------------------------------- | ------------------------- |
+| 1  | Print entire file              | `sed 'p' file.txt`                        | Prints all lines          |
+| 2  | Print specific line            | `sed -n '5p' file.txt`                    | Prints only line 5        |
+| 3  | Print line range               | `sed -n '10,20p' file.txt`                | Prints lines 10–20        |
+| 4  | Delete a line                  | `sed '5d' file.txt`                       | Deletes line 5            |
+| 5  | Delete range                   | `sed '10,20d' file.txt`                   | Deletes lines 10–20       |
+| 6  | Delete empty lines             | `sed '/^$/d' file.txt`                    | Cleanup configs           |
+| 7  | Search & replace (first match) | `sed 's/http/https/' file.txt`            | Replaces first occurrence |
+| 8  | Replace all matches            | `sed 's/http/https/g' file.txt`           | Global replace            |
+| 9  | Replace in file (in-place)     | `sed -i 's/dev/prod/g' app.conf`          | No new file               |
+| 10 | Case-insensitive replace       | `sed 's/error/ERROR/gi' file.log`         | Ignore case               |
+| 11 | Replace only in line range     | `sed '10,20s/foo/bar/g' file.txt`         | Scoped replace            |
+| 12 | Config value replace           | `sed -i 's/^port=.*/port=8080/' app.conf` | Real config edit          |
 
 
+# 🧮 awk Linux Command 
+### awk is a pattern scanning & text processing
 
+## 🧰 awk Commands & Real DevOps Use-Cases
+| #  | Use Case (DevOps)      | Command                                                | Explanation                  |               |
+| -- | ---------------------- | ------------------------------------------------------ | ---------------------------- | ------------- |
+| 1  | Print entire file      | `awk '{print}' file.txt`                               | Prints all lines             |               |
+| 2  | Print specific column  | `awk '{print $1}' file.txt`                            | `$1` = first column          |               |
+| 3  | Print multiple columns | `awk '{print $1,$3}' file.txt`                         | Space-separated output       |               |
+| 4  | Print with row number  | `awk '{print NR,$0}' file.txt`                         | `NR` = line number           |               |
+| 5  | Print last column      | `awk '{print $NF}' file.txt`                           | `NF` = last field            |               |
+| 6  | Print selected rows    | `awk 'NR==5' file.txt`                                 | Prints line 5                |               |
+| 7  | Print range of rows    | `awk 'NR>=10 && NR<=20' file.txt`                      | Lines 10–20                  |               |
+| 8  | Pattern matching       | `awk '/ERROR/ {print}' app.log`                        | Log filtering                |               |
+
+
+# 🔎 Linux grep Command – Complete DevOps Table
+### grep = Global Regular Expression Print
+### Used to search text patterns in files, logs, and command output.
+
+## 🧰 grep Commands & Real DevOps Use-Cases
+| #  | Use Case (DevOps)        | Command                                    | Explanation            |               |
+| -- | ------------------------ | ------------------------------------------ | ---------------------- | ------------- |
+| 1  | Search word in file      | `grep "error" app.log`                     | Finds matching lines   |               |
+| 2  | Case-insensitive search  | `grep -i "error" app.log`                  | Ignores case           |               |
+| 3  | Search recursively       | `grep -r "DB_HOST" /etc/`                  | Search in all files    |               |
+| 4  | Exact word match         | `grep -w "root" /etc/passwd`               | Whole-word match       |               |
+| 5  | Count matches            | `grep -c "ERROR" app.log`                  | Count occurrences      |               |
+| 6  | Show line numbers        | `grep -n "ERROR" app.log`                  | Debug faster           |               |
+| 7  | Invert match             | `grep -v "INFO" app.log`                   | Exclude pattern        |               |
+| 8  | Multiple patterns        | `grep -E "ERROR                            | WARN" app.log`         | OR condition  |
+| 9  | Show matching filename   | `grep -l "ERROR" *.log`                    | Identify bad logs      |               |
+| 10 | Before context only      | `grep -B 2 "ERROR" app.log`                | Pre-error context      |               |
+| 11 | After context only       | `grep -A 2 "ERROR" app.log`                | Post-error context     |               |
+| 12 | Search compressed logs   | `zgrep "ERROR" app.log.gz`                 | No unzip needed        |               |
+| 13 | Ignore binary files      | `grep -I "ERROR" /var/log/*`               | Safe scan              |               |
+| 14 | Filter running processes | `ps -ef                                    | grep nginx`            | Process check |
 
 
 
