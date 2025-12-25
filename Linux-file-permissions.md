@@ -28,6 +28,54 @@
 #### 🔸umask defines default permission removal for new files, while 🔸chmod changes permissions of existing files or directories.
 
 
+# What is chmod?
+chmod (change mode) is used to change permissions of files and directories.
+### 👉 It works on existing files/directories.
+
+## 🔹 Examples (Numeric)
+| Command          | Result               |
+| ---------------- | -------------------- |
+| `chmod 644 file` | rw-r--r--            |
+| `chmod 755 dir`  | rwxr-xr-x            |
+| `chmod 600 file` | rw-------            |
+| `chmod 777 file` | rwxrwxrwx (⚠️ risky) |
+
+## 🔹 Examples (Symbolic)
+| Command               | Meaning                 |
+| --------------------- | ----------------------- |
+| `chmod u+x file`      | Add execute to owner    |
+| `chmod g-w file`      | Remove write from group |
+| `chmod o=r file`      | Others read-only        |
+| `chmod a+x script.sh` | Make executable for all |
+
+# 🔹 How chmod Works on Directories
+Permissions on directories control who can enter, list, create, or delete files.
+
+## 📘 Directory Permission Meaning
+On directories, execute (x) permission is required to access files inside the directory.
+
+| Permission | Symbol | What it Allows                        |
+| ---------- | ------ | ------------------------------------- |
+| Read       | `r`    | List directory contents (`ls`)        |
+| Write      | `w`    | Create, delete, rename files          |
+| Execute    | `x`    | Enter directory (`cd`) & access files |
+
+
+## 🔧 chmod Commands for Directories
+```
+chmod 755 mydir
+chmod u=rwx,g=rx,o=rx mydir
+```
+🔁 Recursive Permission Change
+```
+chmod -R 755 mydir
+```
+| Option | Purpose                                       |
+| ------ | --------------------------------------------- |
+| `-R`   | Apply permissions to all subdirectories/files |
+
+
+
 
 
 
