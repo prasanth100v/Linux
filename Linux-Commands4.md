@@ -93,6 +93,7 @@ tail -n 50 -f app.log          ➡️ Show last 50 lines
 tail -f app1.log app2.log      ➡️ Follow multiple files  
 tail -f app.log | grep ERROR   ➡️ Watch errors only
 kubectl logs -f pod-name       ➡️ Kubernetes pod logs
+head -50 file.txt | tail -15   ➡️ Show lines 36 through 50, shows the last 15 lines
 ```
 
 # 📌 head Command
