@@ -1,3 +1,15 @@
+# cat command used to display the contents of a file,
+| Command             | Purpose                  |
+| ------------------- | ------------------------ |
+| `cat devops.txt`    | Display file             |
+| `cat file1 file2`   | Display two files        |
+| `cat -n devops.txt` | Show line numbers        |
+| `cat > file.txt`  | Create file            |
+| `cat >> file.txt` | Append to file  (add on, usually to the end of file )  |
+| `cat file1 file2 > combined.txt` | Merges file1 & file2   |
+
+
+
 # 🫗 tee Command in Linux
  ### tee = see output + save output (at the same time)
 
