@@ -118,6 +118,19 @@ Purpose: Check what type of file it is (text, binary, script, image, etc.)
 ```
 file filename   👉 Example:  file demo.txt
 ```
+# 🔀 diff Command
+Purpose: Compare two files line by line and show differences.
+## 🚀 DevOps Use Cases
+| Command               | Purpose             |
+| --------------------- | ------------------- |
+| `diff a.txt b.txt`    | Compare files       |
+| `diff -u a.txt b.txt` | Unified diff        |
+| `diff -y a.txt b.txt` | Side-by-side view   |
+| `diff -r dir1 dir2`   | Compare directories |
+|  `diff -u old.conf new.conf` | Compare config files |  
+|  `diff -y a.yaml b.yaml`     |Check YAML changes   |
+| `diff -r prod/ stage/`      |Validate deployments | 
 
-
+## 📣 echo Command
+### Purpose: Print text or variables to output.  👉 echo hello java
 
