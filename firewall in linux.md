@@ -1,6 +1,6 @@
 ## 🔐 What is UFW in Linux?
 It is a simple and user-friendly firewall tool used in Linux (especially Ubuntu) to control network traffic.
-> 👉 Think of UFW = Security Group for Linux VM  (**Uncomplicated Firewall.*)
+> 👉 Think of UFW = Security Group for Linux VM  🔥 Uncomplicated Firewall.
 
 🔍 What can UFW do?
 ```
