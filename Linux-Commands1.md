@@ -105,6 +105,22 @@ sudo = temporary admin power
 ⭐ sudo -i     → Best option    ✔️ Recommended on modern systems
 ✅ sudo systemctl restart nginx  → Single command as root (safest)  ✔️ No root shell needed
 ```
+## 🔐 Linux User Login & Switching Commands
+
+| Command         | Purpose                          | Password Required | Environment Loaded | Notes                     |
+| --------------- | -------------------------------- | ----------------- | ------------------ | ------------------------- |
+| `su`            | Switch to root                   | **Root password** | Partial            | Root env NOT fully loaded |
+| `su -`          | Switch to root (login shell)     | **Root password** | Full root env      | Same as root login        |
+| `su username`   | Switch to another user           | Target user       | Partial            | Keeps current env         |
+| `su - username` | Login as another user            | Target user       | Full user env      | Recommended               |
+| `sudo command`  | Run single command as root       | Your password     | No shell           | Safest method             |
+| `sudo -i`       | Login as root                    | Your password     | Full root env      | **Best practice**         |
+| `sudo su`       | Switch to root                   | Your password     | Partial            | Not recommended           |
+| `sudo su -`     | Login as root                    | Your password     | Full root env      | Works but extra step      |
+| `exit`          | Logout current user              | ❌                 | —                  | Returns to previous user  |
+| `logout`        | Logout login shell               | ❌                 | —                  | Works in TTY              |
+
+
 # 🧾 User & Group Management
 👤 User Management
 | **Task**               | **Command**                             | **Notes**                                         |
