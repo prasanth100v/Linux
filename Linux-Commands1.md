@@ -97,6 +97,20 @@ wget -P /opt/downloads https://example.com/file.zip
 | `sudo yum update`          | Update all packages    |
 
 
+## 🆔 What is PID in Linux?
+PID stands for Process ID.  Every process has one PID
+> 👉 A PID is a unique number given to every running program (process) in Linux.
+
+## 🔍 How to find a PID
+| Task                        | Command                |
+| --------------------------- | ---------------------- |
+| Show current shell PID      | `echo $$`              |
+| List all processes with PID | `ps -ef`               |
+| Find PID by process name    | `ps -ef \| grep nginx` |
+| Find PID quickly            | `pgrep nginx`          |
+| Interactive view            | `top` / `htop`         |
+
+
 # 🧾 ps (Process Status) – Commands Table
 | **Task**                        | **Command**            | **What it Shows**       |
 | ------------------------------- | ---------------------- | ----------------------- |
@@ -110,37 +124,10 @@ wget -P /opt/downloads https://example.com/file.zip
 | Sort by memory usage            | `ps aux --sort=-%mem`  | High memory first       |
 | Watch live output               | `watch ps -ef`         | Refresh every 2 sec     |
 
-# 🧾 kill – Commands Table
-| **Task**                | **Command**         | **Signal / Behavior**  |
-| ----------------------- | ------------------- | ---------------------- |
-| Gracefully stop process | `kill PID`          | SIGTERM (15)           |
-| Force kill process      | `kill -9 PID`       | SIGKILL (9)            |
-| Reload process config   | `kill -HUP PID`     | SIGHUP                 |
-| Pause process           | `kill -STOP PID`    | SIGSTOP                |
-| Resume process          | `kill -CONT PID`    | SIGCONT                |
-| Kill process by name    | `killall nginx`     | All matching processes |
-| Kill user’s processes   | `pkill -u username` | User scope             |
-| Kill by pattern         | `pkill -f demo.sh`  | Match command line     |
 
-# 🆔 PID (Process ID)  Every process has one PID
-### PID is a unique number assigned by Linux to each running process.
-### The OS uses it to track, manage, and control processes.
-
-## 🔍 How to find a PID
-| Task                        | Command                |
-| --------------------------- | ---------------------- |
-| Show current shell PID      | `echo $$`              |
-| List all processes with PID | `ps -ef`               |
-| Find PID by process name    | `ps -ef \| grep nginx` |
-| Find PID quickly            | `pgrep nginx`          |
-| Interactive view            | `top` / `htop`         |
-
-## 🧠 Special PIDs you should know
-| PID  | Meaning                        |
-| ---- | ------------------------------ |
-| `1`  | Init / systemd (first process) |
-| `$$` | Current shell PID              |
-| `0`  | Kernel process (not killable)  |
+## 🔔 What is a Signal (SIG)?
+A signal is just a message sent to a running program.
+> Example messages: “Please stop” “Stop now!” “Pause” “Continue”
 
 ## 🔑 Useful signal reference
 | Signal  | Number | Meaning        |
@@ -151,11 +138,31 @@ wget -P /opt/downloads https://example.com/file.zip
 | SIGSTOP | 19     | Pause          |
 | SIGCONT | 18     | Continue       |
 
+## 🔫 What is kill?
+kill is a command to send a signal to a process.
+> 👉 kill does NOT always kill
+
+# 🧾 kill – Commands Table
+| **Task**                | **Command**         | **Signal / Behavior**  |
+| ----------------------- | ------------------- | ---------------------- |
+| Gracefully stop process (Stop nicely) | `kill PID`          | SIGTERM (15)           |
+| Force kill process      | `kill -9 PID`       | SIGKILL (9) kill -9 = emergency stop 🚨           |
+| Reload process config   | `kill -HUP PID`     | SIGHUP                 |
+| Pause process           | `kill -STOP PID`    | SIGSTOP                |
+| Resume process          | `kill -CONT PID`    | SIGCONT                |
+| Kill process by name    | `killall nginx`     | All matching processes |
+| Kill user’s processes   | `pkill -u username` | User scope             |
+| Kill by pattern         | `pkill -f demo.sh`  | Match command line     |
+
+### One-Line Summary
+```
+Process = running program
+Signal = message to process
+kill = sends signal
+kill -9 = emergency stop 🚨
+```
 ### 🔐 Permissions rule
 ```
 You can kill your own processes
 To kill other users’ processes, use:  sudo kill PID
 ```
-
-
-
