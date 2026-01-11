@@ -98,6 +98,7 @@ wget -P /opt/downloads https://example.com/file.zip
 
 
 ## ✅ switches to root
+sudo = temporary admin power
 ```
 ❌ sudo su     → root with user environment
 ✅ sudo su -   → root with root environment
