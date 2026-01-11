@@ -100,8 +100,8 @@ wget -P /opt/downloads https://example.com/file.zip
 ## ✅ switches to root
 sudo = temporary admin power
 ```
-❌ sudo su     → root with user environment
-✅ sudo su -   → root with root environment
+❌ sudo su     → root with user environment  ⚠️ Does NOT load root’s full login profile (Some root commands may not work)
+✅ sudo su -   → root with root environment  ⚠️  Switches to root user
 ⭐ sudo -i     → Best option    ✔️ Recommended on modern systems
 ✅ sudo systemctl restart nginx  → Single command as root (safest)  ✔️ No root shell needed
 ```
