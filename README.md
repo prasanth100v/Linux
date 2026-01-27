@@ -49,7 +49,6 @@
 | **Load Average**          | System workload over time                                                            |
 | **Booting**               | Process of starting Linux                                                            |
 | **GRUB**                  | Bootloader that loads Linux                                                          |
-| **Runlevel / Target**     | System operating mode                                                                |
 | **Virtual Machine (VM)**  | A virtual computer running Linux                                                     |
 | **Container**             | Lightweight isolated application environment                                         |
 | **Kernel Panic**          | Critical system crash                                                                |
