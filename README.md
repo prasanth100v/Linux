@@ -21,11 +21,9 @@
 | **Process**               | A running program                                                                    |
 | **PID**                   | Process ID (unique number for a process)                                             |
 | **Daemon**                | A background process (e.g., sshd)                                                    |
-| **Service**               | A managed background process                                                         |
 | **Systemd**               | Service manager used in modern Linux                                                 |
 | **Package**               | Software installed on Linux                                                          |
 | **Package Manager**       | Tool to install/update software (yum, apt)                                           |
-| **Repository**            | Online storage of software packages                                                  |
 | **Permission**            | Rules defining who can read/write/execute a file                                     |
 | **Ownership**             | File owner and group information                                                     |
 | **chmod**                 | Command to change file permissions                                                   |
@@ -52,12 +50,3 @@
 | **Virtual Machine (VM)**  | A virtual computer running Linux                                                     |
 | **Container**             | Lightweight isolated application environment                                         |
 | **Kernel Panic**          | Critical system crash                                                                |
-
-
-
-
-
-
-
-
-
