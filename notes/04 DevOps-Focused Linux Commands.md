@@ -1,211 +1,217 @@
-# 🚀 DevOps-Focused Linux Commands (Quick Reference)
+# 🚀 DevOps-Focused Linux Commands Guide
 
-A **colorful DevOps Linux cheat sheet** covering commonly used commands
-for system administration, troubleshooting, and automation.
+A practical quick-reference guide for **Linux commands commonly used by DevOps Engineers**.
 
-------------------------------------------------------------------------
+---
 
-# 📁 File & Directory Operations
+# 📁 1. File & Directory Operations
 
-  Command                  Description
-  ------------------------ -------------------------
-  `ls`, `ls -l`, `ls -a`   List files
-  `pwd`                    Show current directory
-  `cd`                     Change directory
-  `mkdir`                  Create directory
-  `rmdir`                  Remove empty directory
-  `rm`, `rm -r`            Remove files or folders
-  `cp`                     Copy files
-  `mv`                     Move or rename files
-  `touch`                  Create empty file
-  `find`                   Search files
-  `locate`                 Search files via index
-  `top`                    Real-time process view
+| Command | Description |
+|-------|-------------|
+| `ls` | List files |
+| `ls -l` | Detailed file listing |
+| `ls -a` | Show hidden files |
+| `pwd` | Show current directory |
+| `cd` | Change directory |
+| `mkdir` | Create directory |
+| `rmdir` | Remove empty directory |
+| `rm` | Remove file |
+| `rm -r` | Remove directory recursively |
+| `cp` | Copy files |
+| `mv` | Move or rename files |
+| `touch` | Create empty file |
+| `find` | Search files |
+| `locate` | Search using indexed database |
+| `top` | Real-time process monitoring |
 
-------------------------------------------------------------------------
+---
 
-# 📄 File Viewing & Editing
+# 📄 2. File Viewing & Editing
 
-  Command               Description
-  --------------------- ----------------------------------
-  `cat`                 View file contents
-  `head`                Show first lines of file
-  `tail -f`             Monitor logs in real time
-  `nano`, `vim`, `vi`   Edit files
-  `grep`, `egrep`       Search text inside files
-  `awk`                 Pattern scanning and processing
-  `sed`                 Stream editor for modifying text
+| Command | Description |
+|-------|-------------|
+| `cat` | View file contents |
+| `head` | Show first lines of file |
+| `tail -f` | Monitor logs in real time |
+| `nano` | Simple text editor |
+| `vim` | Advanced text editor |
+| `vi` | Classic Unix text editor |
+| `grep` | Search text in files |
+| `egrep` | Extended regex search |
+| `awk` | Pattern scanning and processing |
+| `sed` | Stream editor for modifying text |
 
-------------------------------------------------------------------------
+---
 
-# 🔐 Permissions & Ownership
+# 🔐 3. Permissions & Ownership
 
-  Command   Description
-  --------- -------------------------
-  `chmod`   Change file permissions
-  `chown`   Change file owner
-  `chgrp`   Change file group
+| Command | Description |
+|-------|-------------|
+| `chmod` | Change file permissions |
+| `chown` | Change file owner |
+| `chgrp` | Change file group |
 
-------------------------------------------------------------------------
+---
 
-# 👤 User & Group Management
+# 👥 4. User & Group Management
 
-  Command      Description
-  ------------ -------------------------
-  `whoami`     Current logged in user
-  `id`         UID and GID information
-  `useradd`    Create new user
-  `usermod`    Modify user
-  `userdel`    Delete user
-  `groupadd`   Create group
-  `groupdel`   Delete group
-  `passwd`     Change password
+| Command | Description |
+|-------|-------------|
+| `whoami` | Show current logged-in user |
+| `id` | Display UID and GID information |
+| `useradd` | Create a new user |
+| `usermod` | Modify existing user |
+| `userdel` | Delete a user |
+| `groupadd` | Create new group |
+| `groupdel` | Delete group |
+| `passwd` | Change user password |
 
-### Examples
+### Example Commands
 
-``` bash
-sudo useradd prasanth
-sudo useradd -m prasanth
-sudo useradd -m -G devops prasanth
-sudo passwd alice
-sudo userdel alice
-sudo passwd prasanth
-```
+| Command | Description |
+|-------|-------------|
+| `sudo useradd prasanth` | Create user |
+| `sudo useradd -m prasanth` | Create user with home directory |
+| `sudo useradd -m -G devops prasanth` | Add user to devops group |
+| `sudo passwd alice` | Change password for alice |
+| `sudo userdel alice` | Delete user alice |
+| `sudo passwd prasanth` | Set password for prasanth |
 
-------------------------------------------------------------------------
+---
 
-# ⚙️ Process & Resource Monitoring
+# ⚡ 5. Process & Resource Monitoring
 
-  Command                Description
-  ---------------------- ------------------------
-  `ps aux`               List running processes
-  `top`, `htop`          Monitor processes live
-  `kill`                 Kill process
-  `df -h`                Disk usage
-  `du -sh`               Directory size
-  `free -m`, `free -h`   Memory usage
-  `uptime`               System load
-  `vmstat`               Performance statistics
+| Command | Description |
+|-------|-------------|
+| `ps aux` | List running processes |
+| `top` | Real-time process monitor |
+| `htop` | Interactive process viewer |
+| `kill` | Terminate process |
+| `df -h` | Disk usage |
+| `du -sh` | Directory size |
+| `free -m` | Memory usage (MB) |
+| `free -h` | Memory usage (human readable) |
+| `uptime` | System load |
+| `vmstat` | System performance statistics |
 
-------------------------------------------------------------------------
+---
 
-# 🔑 sudo vs su
+# 🧠 Understanding sudo
 
-### sudo
+| Command | Description |
+|-------|-------------|
+| `sudo` | Run commands with administrator privileges |
 
-`sudo` means **Superuser Do**.\
-Allows normal users to execute commands with **root privileges**.
+Example
 
-Example:
+| Command | Description |
+|-------|-------------|
+| `sudo apt update` | Update package list |
 
-``` bash
-sudo apt update
-```
+---
 
-💡 Requires your password for security.
+# 🔄 Understanding su
 
-### su
+| Command | Description |
+|-------|-------------|
+| `su` | Switch to root user |
+| `su devops` | Switch to devops user |
+| `exit` | Return to previous user |
 
-`su` means **Substitute User**.
+---
 
-``` bash
-su
-su devops
-exit
-```
+# 🌐 6. Networking Commands
 
-------------------------------------------------------------------------
+| Command | Description |
+|-------|-------------|
+| `ping google.com` | Test network connectivity |
+| `curl -I http://example.com` | Fetch HTTP headers |
+| `wget URL` | Download files |
+| `ifconfig` | Show network interfaces |
+| `netstat -an` | Show active connections |
+| `ss -tulnp` | Show listening ports |
+| `nslookup google.com` | DNS lookup |
+| `dig google.com` | Detailed DNS query |
+| `ssh user@host` | Remote login |
+| `telnet google.com 80` | Test host and port |
 
-# 🌐 Networking Commands
+---
 
-  Command                  Description
-  ------------------------ -------------------------
-  `ping google.com`        Test connectivity
-  `curl -I URL`            Fetch HTTP headers
-  `wget URL`               Download files
-  `ifconfig`               Show network interfaces
-  `netstat -an`            Active connections
-  `ss -tulnp`              Open ports and services
-  `nslookup google.com`    DNS lookup
-  `dig google.com`         Detailed DNS query
-  `ssh user@host`          Remote login
-  `telnet google.com 80`   Test port connectivity
+# 📦 7. Package Management
 
-------------------------------------------------------------------------
+### Debian / Ubuntu
 
-# 📦 Package Management
+| Command | Description |
+|-------|-------------|
+| `apt update` | Update package index |
+| `apt install nginx` | Install nginx |
+| `sudo apt install docker` | Install Docker |
 
-  -----------------------------------------------------------------------
-  OS                                  Commands
-  ----------------------------------- -----------------------------------
-  Debian / Ubuntu                     `apt update`, `apt install`,
-                                      `sudo apt install docker`
+### RHEL / CentOS
 
-  RHEL / CentOS                       `yum install`,
-                                      `sudo yum install docker`
-  -----------------------------------------------------------------------
+| Command | Description |
+|-------|-------------|
+| `yum install nginx` | Install nginx |
+| `sudo yum install docker` | Install Docker |
 
-------------------------------------------------------------------------
+---
 
-# 📜 Logs & System Information
+# 📜 8. Logs & System Information
 
-  Command             Description
-  ------------------- ---------------------------
-  `journalctl`        View system logs
-  `dmesg`             Kernel messages
-  `history`           Command history
-  `date`              Current date/time
-  `uptime`            System uptime
-  `lscpu`             CPU information
-  `alias`             Create command shortcuts
-  `crontab -e`        Schedule tasks
-  `shutdown -h now`   Shutdown system
-  `reboot`            Restart system
-  `openssl`           Generate SSL certificates
+| Command | Description |
+|-------|-------------|
+| `journalctl` | View system logs |
+| `dmesg` | Kernel messages |
+| `history` | Command history |
+| `date` | Show current date and time |
+| `lscpu` | CPU information |
+| `alias` | Create command shortcuts |
+| `crontab -e` | Schedule tasks |
+| `shutdown -h now` | Shutdown system |
+| `reboot` | Restart system |
+| `openssl` | Generate SSL certificates |
 
-------------------------------------------------------------------------
+---
 
 # 🧰 Extra Useful Commands
 
-  Command                     Description
-  --------------------------- -------------------------
-  `uname`                     Show OS kernel
-  `uname -r`                  Kernel version
-  `clear`                     Clear terminal
-  `whoami`                    Current user
-  `rm -rf folder`             Force delete folder
-  `rm -f file.txt`            Force delete file
-  `tar -xvf file.tar`         Extract archive
-  `tar -cvf file.tar files`   Create tar archive
-  `tar -tvf file.tar`         List archive contents
-  `tar -tzvf file.tar.gz`     List compressed archive
+| Command | Description |
+|-------|-------------|
+| `uname` | Show kernel name |
+| `uname -r` | Show kernel version |
+| `clear` | Clear terminal screen |
+| `whoami` | Show logged-in user |
+| `rm -rf myfolder` | Delete folder recursively |
+| `rm -f file.txt` | Force delete file |
+| `tar -xvf archive.tar` | Extract tar archive |
+| `tar -cvf archive.tar file1 file2 folder1` | Create tar archive |
+| `tar -tvf archive.tar` | List tar contents |
+| `tar -tzvf archive.tar.gz` | List tar.gz contents |
 
 ⚠ **Warning:** `rm -rf` permanently deletes files.
 
-------------------------------------------------------------------------
+---
 
-# 🔧 systemctl (Service Management)
+# ⚙️ systemctl (Service Management)
 
-  Command                     Description
-  --------------------------- ----------------------
-  `systemctl start nginx`     Start service
-  `systemctl stop nginx`      Stop service
-  `systemctl restart nginx`   Restart service
-  `systemctl status nginx`    Check service status
-  `systemctl enable nginx`    Start on boot
-  `systemctl disable nginx`   Disable startup
+| Command | Description |
+|-------|-------------|
+| `systemctl start nginx` | Start nginx service |
+| `systemctl stop nginx` | Stop nginx service |
+| `systemctl restart nginx` | Restart nginx service |
+| `systemctl status nginx` | Check service status |
+| `systemctl enable nginx` | Enable service at boot |
+| `systemctl disable nginx` | Disable service at boot |
 
-------------------------------------------------------------------------
+---
 
-# 🎯 Conclusion
+# 🏁 Conclusion
 
-These commands are **core tools for DevOps engineers** working with:
+These Linux commands form the **core toolkit for DevOps Engineers** working with:
 
--   Linux Servers
--   Kubernetes nodes
--   Cloud infrastructure
--   CI/CD pipelines
+- Linux Servers  
+- Kubernetes Nodes  
+- Cloud Infrastructure  
+- CI/CD Pipelines  
 
-Mastering them helps with **automation, troubleshooting, and system
-reliability**.
-
+Mastering these commands improves **troubleshooting, automation, and system management skills**.
