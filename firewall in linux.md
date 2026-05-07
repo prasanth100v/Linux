@@ -128,3 +128,5 @@ firewalld = advanced, zone-based firewall for RHEL / Amazon Linux
 | ---------------------------------------------- | ---------------- |
 | `sudo firewall-cmd --set-default-zone=trusted` | Allow everything |
 | `sudo systemctl stop firewalld`                | Disable firewall |
+
+...........
