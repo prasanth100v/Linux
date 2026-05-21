@@ -1,7 +1,7 @@
 # 📝 What is vi Editor?
 vi (Visual Editor) is a powerful, lightweight, terminal-based text editor
 ### 🚀 Open a file  ➡️ If file doesn’t exist → it will be created.
-```
+```bash
 vi filename.txt
 vi /etc/nginx/nginx.conf
 ```
@@ -62,27 +62,27 @@ vi edits a file with your normal user permissions.
 
 sudo vi edits a file with root (administrator) permissions.
 ### 🔹 vi (Normal user)   Opens a file using your current user  :   Safer for everyday work  (Code, scripts, docs)
-```
+```hcl
 vi myfile.txt
-If you try:    vi /etc/hosts   ➡️ You can open it, but saving will fail: E212: Can't open file for writing
+If you try :    vi /etc/hosts   ➡️ You can open it, but saving will fail: E212: Can't open file for writing
 ```
 ### 🔹 sudo vi (Root access) : Opens the file as root  ➡️ Can edit and save system/critical files, Config files.
-```
+```hcl
 sudo vi /etc/hosts        ✔️ File opens and saves successfully
- Powerful ⚠️ — mistakes can break the system
+                           Powerful ⚠️ — mistakes can break the system
 ```
 
 ### 📝 Example: Add a user to sudo
 Using visudo: Never edit /etc/sudoers directly with vi. Always use visudo.
-```
+```bash
 sudo visudo
 ```
 Add at the bottom:
-```
+```hcl
 prasanth ALL=(ALL) ALL
 ```
 Meaning:
-```
+```hcl
 prasanth → username
 ALL → any host
 (ALL) → any user
@@ -91,7 +91,7 @@ ALL → any command
 🧠 Pro tip (even safer)
 
 ### Instead of editing /etc/sudoers directly, create a file:
-```
+```hcl
 sudo visudo -f /etc/sudoers.d/prasanth
 ```
 This is:  ✔️Cleaner  ✔️Safer  ✔️Easier to manage
