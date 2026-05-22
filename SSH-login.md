@@ -1,44 +1,61 @@
-🔐 SSH Key-Based Login for devuser in EC2 — Complete Explanation
+## 🔐 SSH Key-Based Login for `devuser` in EC2 — Complete Explanation
 
- * This setup allows a new Linux user (devuser) to log in to an EC2 instance securely using the same `.pem private key` already used by ec2-user.
- * Instead of `passwords`, `SSH` uses `public/private key authentication`.
+* ✨ This setup allows a new Linux user (`devuser`) to log in to an EC2 instance securely using the same `.pem private key` already used by `ec2-user`.
+* 🔑 Instead of `passwords`, SSH uses `public/private key authentication`.
 
-### SSH key-based login for devuser
-Copied SSH keys from `ec2-user to devuser` and correctly locked down ownership and permissions so SSH login works securely.
+---
 
-1️⃣ Create .ssh directory   🔹 SSH will not work without this configuration directory
-```
+## 🚀 SSH key-based login for `devuser`
+📋 Copied SSH keys from `ec2-user` to `devuser` and correctly locked down ownership and permissions so SSH login works securely.
+
+## 1️⃣ Create `.ssh` directory
+🔹 SSH will not work without this configuration directory
+```hcl
 sudo adduser devuser
-sudo mkdir -p /home/devuser/.ssh                 #(-p avoids errors if it already exists)
+sudo mkdir -p /home/devuser/.ssh                 # (-p avoids errors if it already exists)
 ```
-2️⃣ Copy authorized keys   🔹 Copies SSH public keys from ec2-user
+
+## 2️⃣ Copy authorized keys
+🔹 Copies SSH public keys from `ec2-user`
+```hcl
+sudo cp /home/ec2-user/.ssh/authorized_keys /home/devuser/.ssh/    # Allows devuser to log in using the same private key
 ```
-sudo cp /home/ec2-user/.ssh/authorized_keys /home/devuser/.ssh/    #Allows devuser to log in using the same private key
-```
-3️⃣ Fix ownership (VERY IMPORTANT)    🔹 Sets correct UID:GID ownership
-```
+
+## 3️⃣ Fix ownership (VERY IMPORTANT)
+🔹 Sets correct `UID:GID` ownership
+```hcl
 sudo chown -R devuser:devuser /home/devuser/.ssh
 ```
-4️⃣ Secure directory permissions        🔹 Only devuser can read/write/enter the directory
-```
+
+## 4️⃣ Secure directory permissions
+🔹 Only `devuser` can read/write/enter the directory
+```hcl
 sudo chmod 700 /home/devuser/.ssh
 ```
-5️⃣ Secure authorized_keys file       🔹 Only devuser can read/write the file
-```
+
+## 5️⃣ Secure `authorized_keys` file
+🔹 Only `devuser` can read/write the file
+```hcl
 sudo chmod 600 /home/devuser/.ssh/authorized_keys
 ```
-✅ Final Permission Check (Recommended)
-```
+
+# ✅ Final Permission Check (Recommended)
+```hcl
 ls -ld /home/devuser/.ssh
 ls -l /home/devuser/.ssh/authorized_keys
 ```
-Expected output:
-```
+
+### ✅ Expected output
+```hcl
 🔸drwx------ devuser devuser .ssh
 🔸-rw------- devuser devuser authorized_keys
 ```
-### (EC2 Best Practice)
-```
+
+---
+
+# ⭐ EC2 Best Practice
+
+```hcl
 sudo adduser devuser
 sudo mkdir -p /home/devuser/.ssh
 sudo cp ~/.ssh/authorized_keys /home/devuser/.ssh/
@@ -46,86 +63,152 @@ sudo chown -R devuser:devuser /home/devuser/.ssh
 sudo chmod 700 /home/devuser/.ssh
 sudo chmod 600 /home/devuser/.ssh/authorized_keys
 ```
-### ✅ How to Login as devuser
-From your local machine
-```
-ssh -i your-key.pem devuser@<EC2_PUBLIC_IP>       📌 ssh -i mykey.pem devuser@54.210.xxx.xxx
-```
-* Local machine → sends authentication request EC2 SSH server (sshd) → checks authorized_keys If matching public key found → `login allowed`
 
-🔁 If You Are Already Logged In as ec2-user  You don’t need SSH again:
+# ✅ How to Login as `devuser`
+💻 From your local machine
+```hcl
+ssh -i your-key.pem devuser@<EC2_PUBLIC_IP>
+
+# 📌 Example : ssh -i mykey.pem devuser@54.210.xxx.xxx
 ```
+
+### 🔄 Authentication flow:
+```hcl
+Local machine ➜ sends authentication request 
+EC2 SSH server (sshd) ➜ checks authorized_keys
+If matching public key found ➜ ✅ login allowed
+```
+
+## 🔁 If You Are Already Logged In as `ec2-user`
+🚫 You don’t need SSH again:
+```hcl
 sudo su - devuser
 ```
-### 🛠 If Login Fails (Quick Checklist)
-```
+
+## 🛠 If Login Fails (Quick Checklist)
+```hcl
 sudo systemctl status sshd
 sudo systemctl restart sshd
 ```
-### ✅ Login as devuser via MobaXterm
-```
-Open MobaXterm → Session → SSH
-     🔸Remote host: EC2_PUBLIC_IP / DNS
-     ✅ Check Specify username → enter devuser
-Go to Advanced SSH settings
-     ✅ Use private key
-     🔸 Select the same .pem key used for ec2-user
-Click OK → you’ll log in directly as devuser
-```
-✅ password is NOT required 👍 You’re using SSH key-based authentication, so no password prompt will appear.
 
-### 🔐 Why no password?
-```
-🔸Because:
-    Your public key is in /home/devuser/.ssh/authorized_keys
-    Your private key (.pem) is configured in MobaXterm
-           SSH matches the keys → login allowed
-```
-```
-🔸/etc/ssh/sshd_config
-     PubkeyAuthentication yes
-     PasswordAuthentication no
-🔸sudo systemctl restart sshd        #Restart if changed
+## ✅ Login as `devuser` via MobaXterm
+```hcl
+🖥 Open MobaXterm → Session → SSH
+
+🔸 Remote host: EC2_PUBLIC_IP / DNS
+✅ Check "Specify username" → enter devuser
+
+➡️ Go to Advanced SSH settings
+
+✅ Use private key
+🔸 Select the same .pem key used for ec2-user
+
+➡️ Click OK → you’ll log in directly as devuser
 ```
 
+✅ Password is NOT required 👍 You’re using `SSH key-based authentication`, so no password prompt will appear.
+
+---
+
+## 🔐 Why no password?
+
+```hcl
+🔸 Because:
+   ✔️ Your public key is in: /home/devuser/.ssh/authorized_keys
+   ✔️ Your private key (.pem) is configured in MobaXterm
+
+   🔄 SSH matches the keys
+       ➜ ✅ login allowed
+```
+
+## ⚙️ SSH Configuration
+```hcl
+# 🔸 /etc/ssh/sshd_config
+
+PubkeyAuthentication    ➜  yes
+PasswordAuthentication  ➜  no
+```
+
+```bash
+sudo systemctl restart sshd        # Restart if changed
+```
+
+# 🐧 About `/bin/bash`
+```hcl
 /bin/bash = interactive shell that allows a user to log in and run commands.
-🔍 Where /bin/bash appears
 ```
-cat /etc/passwd:
+
+## 🔍 Where `/bin/bash` appears
+```hcl
+cat /etc/passwd
+```
+```hcl
 devuser:x:1001:1001::/home/devuser:/bin/bash
-    👉 If shell is /bin/bash → user can log in
-    👉 If shell is /sbin/nologin or /bin/false → SSH login blocked
 ```
 
-### 🔐 IAM-based access vs EC2 login — clear, real-world comparison
-| Layer             | IAM-based access               | EC2 login                          |
-| ----------------- | ------------------------------ | ---------------------------------- |
-| What it controls  | **AWS resources**              | **Linux OS on EC2**                |
-| Who authenticates | IAM User / Role                | Linux user (`ec2-user`, `devuser`) |
-| How               | IAM policies + temporary creds | SSH key / password                 |
-| Scope             | S3, EC2 API, RDS, EKS, etc.    | Files, processes, sudo             |
-| Audit             | CloudTrail                     | OS logs                            |
-| Best use          | Service-to-service access      | System administration              |
+### ✅ Meaning
+```hcl
+👉 If shell is /bin/bash  ➜ ✅ user can log in
+👉 If shell is /sbin/nologin or /bin/false ➜ ❌ SSH login blocked
+```
 
-```    
- 🔑 IAM-based access (AWS side)  ➡️ IAM controls what EC2 can do in AWS.
- 🧑‍💻 EC2 login (OS side)          ➡️ EC2 login controls who can use the Linux machine.
-```
-🚫 Common misunderstanding (very important)
-```
-❌ “I have IAM access, so I can log in to EC2”  ➡️ Wrong
-❌ “I can SSH into EC2, so I can access S3”     ➡️ Wrong
-```
-They are independent systems.
+# 🔐 IAM-based access vs EC2 login — Clear Real-World Comparison
 
-### ✅ EC2 login through SSM (Session Manager) over SSH
+| 🏷️ Layer            | 🔑 IAM-based access | 🖥️ EC2 login                            |
+|---------------------|----------------------|------------------------------------------|
+| 🎯 What it controls | AWS resources        | Linux OS on EC2                        |
+| 👤 Who authenticates | IAM User / Role     | Linux user (`ec2-user`, `devuser`)      |
+| ⚙️ How              | IAM policies + temporary creds | SSH key / password           |
+| 🌐 Scope            | S3, EC2 API, RDS, EKS, etc. | Files, processes, sudo          |
+| 📜 Audit            | CloudTrail          | OS logs                                 |
+| ✅ Best use         | Service-to-service access | System administration              |
+
+---
+
+```text
+🔑 IAM-based access (AWS side)
+   ➜ IAM controls what EC2 can do in AWS
+
+🧑‍💻 EC2 login (OS side)
+   ➜ EC2 login controls who can use the Linux machine
 ```
-❌ No SSH keys  ❌ No open port 22
-✅ IAM-based login to EC2 ✅ Reduced attack surface
+
+---
+
+# 🚫 Common Misunderstanding (Very Important)
+
+```text
+❌ “I have IAM access, so I can log in to EC2”
+   ➜ Wrong
+
+❌ “I can SSH into EC2, so I can access S3”
+   ➜ Wrong
 ```
-### 🧑‍💻 How to connect 
+
+⚠️ They are independent systems.
+
+---
+
+# ✅ EC2 login through SSM (Session Manager) over SSH
+
+```text
+❌ No SSH keys
+❌ No open port 22
+
+✅ IAM-based login to EC2
+✅ Reduced attack surface
 ```
-🔹 AWS Console → EC2 → Connect → Session Manager → Click Connect
+
+---
+
+# 🧑‍💻 How to Connect using Session Manager
+
+```text
+🔹 AWS Console
+   ➜ EC2
+      ➜ Connect
+         ➜ Session Manager
+            ➜ Click Connect
 ```
 
 ## 🔐 EC2 SSH & IAM — Rapid Fire Interview Q&A
