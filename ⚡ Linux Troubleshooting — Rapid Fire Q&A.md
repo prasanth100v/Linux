@@ -34,9 +34,9 @@
 | 🔑 Q31  | Restart SSH service?                            | 👉 systemctl restart sshd                     |
 | 📜 Q32  | System logs location?                           | 👉 /var/log                                   |
 | 📜 Q33  | Live log monitoring?                            | 👉 tail -f /var/log/messages                  |
-| 📜 Q34  | Authentication logs?                            | 👉 /var/log/secure or /var/log/auth.log       |
-| 🖥️ Q35 | System stuck during boot?                       | 👉 Check GRUB & system logs.                  |
-| 🖥️ Q36 | Boot logs command?                              | 👉 journalctl -b                              |
+| 📜 Q34  | Authentication logs?                            | 👉 `/var/log/secure` or `/var/log/auth.log`   |
+| 🖥️ Q35 | System stuck during boot?                       | 👉 Check `GRUB & system logs`.                 |
+| 🖥️ Q36 | Boot logs command?                              | 👉 journalctl -b                               |
 | 💽 Q37  | Filesystem corruption check?                    | 👉 fsck                                       |
 | 💽 Q38  | Read-only filesystem issue?                     | 👉 Possible disk corruption/full disk.        |
 | 📦 Q39  | Broken package dependencies?                    | 👉 Use: apt --fix-broken install              |
