@@ -3,7 +3,7 @@ It is a simple and user-friendly firewall tool used in Linux (especially Ubuntu)
 > 👉 Think of UFW = Security Group for Linux VM  🔥 Uncomplicated Firewall.
 
 🔍 What can UFW do?
-```
+```hcl
 ✔ Allow or block ports
 ✔ Allow traffic from specific IPs
 ✔ Allow specific services (ssh, http)
@@ -74,14 +74,14 @@ It is a simple and user-friendly firewall tool used in Linux (especially Ubuntu)
 
 # 🔓 Allow ALL Traffic in UFW
 ### ✅ Allow all incoming and outgoing traffic
-```
+```hcl
 sudo ufw default allow incoming
 sudo ufw default allow outgoing
 ```
 ➡️ This removes all firewall restrictions.
 
 ✅ Better Alternative (Recommended) 🔐 Secure + practical (AWS-style security).
-```
+```hcl
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw allow ssh
@@ -92,7 +92,7 @@ sudo ufw allow 443
 # 🔐 What is firewalld?
 firewalld is a dynamic firewall management tool for Linux.
 ## 🔥 UFW vs firewalld (Complete Comparison)
-```
+```hcl
 UFW = simple firewall for Ubuntu / Debian
 firewalld = advanced, zone-based firewall for RHEL / Amazon Linux
 ```
@@ -128,5 +128,3 @@ firewalld = advanced, zone-based firewall for RHEL / Amazon Linux
 | ---------------------------------------------- | ---------------- |
 | `sudo firewall-cmd --set-default-zone=trusted` | Allow everything |
 | `sudo systemctl stop firewalld`                | Disable firewall |
-
-...........
