@@ -19,7 +19,7 @@
 
 ## ✅ switches to root
 sudo = temporary admin power
-```
+```hcl
 ❌ sudo su     → root with user environment  ⚠️ Does NOT load root’s full login profile (Some root commands may not work)
 ✅ sudo su -   → root with root environment  ⚠️  Switches to root user
 ⭐ sudo -i     → Best option    ✔️ Recommended on modern systems
@@ -89,7 +89,53 @@ sudo = temporary admin power
 | Change both               | `sudo chown user:group file`   | Most common           |
 
 
-
-
-
+## ⚡ User Management in Linux — Rapid Fire Q&A
+| 🔢 Q#   | ❓ Question                                               | 💡 Answer                                               |
+| ------- | -------------------------------------------------------- | --------------------------------------------------------- |
+| 🔹 Q1   | What is a user in Linux?                                 | 👉 An account that can log in and use system resources. |
+| 🔹 Q2   | What is the root user?                                   | 👉 `Superuser with full system access`.                   |
+| 🔹 Q3   | Default UID of root user?                                | 👉 `0  `                                                  |
+| 👤 Q4   | Command to create a user?                                | 👉 `useradd username `                                    |
+| 👤 Q5   | Create user with home directory?                         | 👉 `useradd -m username `                                 |
+| 👤 Q6   | Set password for user?                                   | 👉 passwd username                                      |
+| 📄 Q7   | User details stored in which file?                       | 👉 `/etc/passwd `                                         |
+| 📄 Q8   | Password hashes stored in?                               | 👉 `/etc/shadow   `                                       |
+| 📄 Q9   | Group information stored in?                             | 👉 `/etc/group`                                           |
+| 🔍 Q10  | Show current logged-in user?                             | 👉 whoami                                               |
+| 🔍 Q11  | Show logged-in users?                                    | 👉 who                                                  |
+| 🔍 Q12  | Check user ID (UID/GID)?                                 | 👉 `id username `                                         |
+| 🔐 Q13  | Force password change on next login?                     | 👉` passwd -e username   `                                |
+| 🔐 Q14  | Lock user account?                                       | 👉 `passwd -l username  `                                 |
+| 🔐 Q15  | Unlock user account?                                     | 👉 `passwd -u username    `                               |
+| ⚙️ Q16  | Change username?                                         | 👉 `usermod -l newname oldname   `                        |
+| ⚙️ Q17  | Change user shell?                                       | 👉 `usermod -s /bin/bash username     `                   |
+| ⚙️ Q18  | Add user to group?                                       | 👉` usermod -aG groupname username    `                   |
+| 🗑️ Q19 | Delete user?                                             | 👉 `userdel username    `                                 |
+| 🗑️ Q20 | Delete user with home directory?                         | 👉 `userdel -r username   `                               |
+| 👥 Q21  | What is a group in Linux?                                | 👉 Collection of users for permission management.       |
+| 👥 Q22  | Create group?                                            | 👉` groupadd developers    `                              |
+| 👥 Q23  | Delete group?                                            | 👉 `groupdel developers  `                                |
+| 🛡️ Q24 | What is sudo?                                            | 👉 Allows user to execute commands as root.             |
+| 🛡️ Q25 | Sudo configuration file?                                 | 👉 `/etc/sudoers  `                                       |
+| 🛡️ Q26 | Safest way to edit sudoers?                              | 👉 `visudo   `                                            |
+| 💻 Q27  | What is a login shell?                                   | 👉 Command interpreter assigned to user.                |
+| 💻 Q28  | List available shells?                                   | 👉 `cat /etc/shells `                                     |
+| 🏠 Q29  | Default home directory path?                             | 👉 `/home/username    `                                   |
+| 🏠 Q30  | User startup files examples?                             | 👉 .bashrc, .profile                                    |
+| ⏰ Q31   | Set account expiry date?                                 | 👉 `chage -E 2026-12-31 username   `                      |
+| ⏰ Q32   | View password aging info?                                | 👉 `chage -l username  `                                  |
+| 🔄 Q33  | Switch user?                                             | 👉 `su - username     `                                   |
+| 🔄 Q34  | Switch to root?                                          | 👉` sudo su -    `                                        |
+| 🔑 Q35  | Change file owner?                                       | 👉 `chown user file  `                                    |
+| 🔑 Q36  | Change group ownership?                                  | 👉 `chgrp group file    `                                 |
+| 🛠️ Q37 | User cannot login?                                       | 👉 Check: `Password, Shell, Account lock, SSH config `    |
+| 🛠️ Q38 | Permission denied issue?                                 | 👉 `Check ownership and permissions. `                    |
+| 🔐 Q39  | Why disable root SSH login?                              | 👉 `Security best practice`.                              |
+| 🔐 Q40  | Best practice for admin access?                          | 👉 `Use sudo` instead of `direct root login`.               |
+| 🎯 Q41  | Developer needs temporary admin access — what do you do? | 👉 Add to `sudo group temporarily`.                       |
+| 🎯 Q42  | User deleted accidentally — recovery possible?           | 👉 `Restore from backup`.                                 |
+| 🎯 Q43  | Why use groups instead of individual permissions?        | 👉 Easier management.                                   |
+| 🚀 Q44  | What is PAM?                                             | 👉 Pluggable Authentication Modules.                    |
+| 🚀 Q45  | What is `/etc/skel`?                                     | 👉 Template files for new users.                        |
+| 🚀 Q46  | What is `passwd`?                                       | 👉 The passwd command is used to manage user passwords and account access. |
 
