@@ -128,3 +128,55 @@ firewalld = advanced, zone-based firewall for RHEL / Amazon Linux
 | ---------------------------------------------- | ---------------- |
 | `sudo firewall-cmd --set-default-zone=trusted` | Allow everything |
 | `sudo systemctl stop firewalld`                | Disable firewall |
+
+⚡ Linux Firewall — Rapid Fire Q&A
+| 🔢 Q#   | ❓ Question                                  | 💡 Answer                                                                  |
+| ------- | ------------------------------------------- | -------------------------------------------------------------------------- |
+| 🔹 Q1   | What is a firewall in Linux?                | 👉 Security mechanism that controls incoming and outgoing network traffic. |
+| 🔹 Q2   | Why is firewall important?                  | 👉 Protects system from unauthorized access.                               |
+| 🔹 Q3   | Common firewall tools in Linux?             | 👉 iptables, firewalld, ufw                                                |
+| 🔥 Q4   | What is iptables?                           | 👉 Command-line firewall utility in Linux.                                 |
+| 🔥 Q5   | What are iptables tables?                   | 👉 filter, nat, mangle                                                     |
+| 🔥 Q6   | Default table in iptables?                  | 👉 filter                                                                  |
+| 🔥 Q7   | Main chains in filter table?                | 👉 INPUT, OUTPUT, FORWARD                                                  |
+| 💻 Q8   | View iptables rules?                        | 👉 iptables -L                                                             |
+| 💻 Q9   | Allow SSH port 22?                          | 👉 iptables -A INPUT -p tcp --dport 22 -j ACCEPT                           |
+| 💻 Q10  | Block IP address?                           | 👉 iptables -A INPUT -s 192.168.1.10 -j DROP                               |
+| 💻 Q11  | Delete rule?                                | 👉 iptables -D INPUT 1                                                     |
+| 🛡️ Q12 | What is firewalld?                          | 👉 Dynamic firewall manager using zones.                                   |
+| 🛡️ Q13 | Default firewall tool in RHEL/CentOS 7+?    | 👉 firewalld                                                               |
+| 🛡️ Q14 | Main command for firewalld?                 | 👉 firewall-cmd                                                            |
+| ⚙️ Q15  | Check firewall status?                      | 👉 systemctl status firewalld                                              |
+| ⚙️ Q16  | Start firewalld?                            | 👉 systemctl start firewalld                                               |
+| ⚙️ Q17  | Enable firewalld at boot?                   | 👉 systemctl enable firewalld                                              |
+| 🌐 Q18  | Open port 80 permanently?                   | 👉 firewall-cmd --permanent --add-port=80/tcp                              |
+| 🌐 Q19  | Reload firewall after changes?              | 👉 firewall-cmd --reload                                                   |
+| 🌐 Q20  | List open ports?                            | 👉 firewall-cmd --list-ports                                               |
+| 🔌 Q21  | Allow HTTP service?                         | 👉 firewall-cmd --permanent --add-service=http                             |
+| 🔌 Q22  | Remove service?                             | 👉 firewall-cmd --permanent --remove-service=http                          |
+| 🌍 Q23  | What is a zone in firewalld?                | 👉 Trust level for network connections.                                    |
+| 🌍 Q24  | Default zone?                               | 👉 firewall-cmd --get-default-zone                                         |
+| 🌍 Q25  | List all zones?                             | 👉 firewall-cmd --get-zones                                                |
+| 🐧 Q26  | What is UFW?                                | 👉 Uncomplicated Firewall for Ubuntu.                                      |
+| 🐧 Q27  | Enable UFW?                                 | 👉 ufw enable                                                              |
+| 🐧 Q28  | Allow SSH in UFW?                           | 👉 ufw allow ssh                                                           |
+| 🐧 Q29  | Check UFW status?                           | 👉 ufw status                                                              |
+| 🌐 Q30  | Check listening ports?                      | 👉 ss -tulnp                                                               |
+| 🌐 Q31  | Difference between TCP & UDP?               | 👉 TCP = connection-oriented, UDP = connectionless.                        |
+| 🛠️ Q32 | Application not reachable?                  | 👉 Check: Firewall rules, Listening ports, Service status                  |
+| 🛠️ Q33 | SSH blocked accidentally?                   | 👉 Access console and re-add SSH rule.                                     |
+| 🛠️ Q34 | Changes not applied in firewalld?           | 👉 Reload firewall.                                                        |
+| 🔐 Q35  | What is DROP rule?                          | 👉 Silently discard traffic.                                               |
+| 🔐 Q36  | What is REJECT rule?                        | 👉 Reject traffic with response.                                           |
+| 🔐 Q37  | What is ACCEPT rule?                        | 👉 Allow traffic.                                                          |
+| 🚀 Q38  | What is NAT in firewall?                    | 👉 Network Address Translation.                                            |
+| 🚀 Q39  | What is port forwarding?                    | 👉 Redirect traffic from one port to another.                              |
+| 💾 Q40  | Are iptables rules persistent after reboot? | 👉 ❌ Not unless saved.                                                     |
+| 💾 Q41  | Save iptables rules?                        | 👉 service iptables save                                                   |
+| 🎯 Q42  | Website not accessible externally?          | 👉 Check: Firewall, Security Groups, Web service, Port listening           |
+| 🎯 Q43  | Port open but app unreachable?              | 👉 Application may not be listening.                                       |
+| 🎯 Q44  | Why use firewalld over iptables?            | 👉 Easier management & dynamic updates.                                    |
+| ☸️ Q45  | Why firewall important in Kubernetes nodes? | 👉 Controls node-level traffic.                                            |
+| ☸️ Q46  | Common Kubernetes ports?                    | 👉 6443 → API Server <br> 10250 → kubelet                                  |
+
+
