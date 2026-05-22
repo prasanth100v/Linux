@@ -173,18 +173,11 @@ devuser:x:1001:1001::/home/devuser:/bin/bash
    ➜ EC2 login controls who can use the Linux machine
 ```
 
----
-
-# 🚫 Common Misunderstanding (Very Important)
-
-```text
-❌ “I have IAM access, so I can log in to EC2”
-   ➜ Wrong
-
-❌ “I can SSH into EC2, so I can access S3”
-   ➜ Wrong
+## 🚫 Common Misunderstanding (Very Important)
+```hcl
+❌ “I have IAM access, so I can log in to EC2”   ➜ Wrong
+❌ “I can SSH into EC2, so I can access S3”  ➜ Wrong
 ```
-
 ⚠️ They are independent systems.
 
 ---
@@ -199,10 +192,7 @@ devuser:x:1001:1001::/home/devuser:/bin/bash
 ✅ Reduced attack surface
 ```
 
----
-
 # 🧑‍💻 How to Connect using Session Manager
-
 ```text
 🔹 AWS Console
    ➜ EC2
