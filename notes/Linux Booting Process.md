@@ -47,6 +47,6 @@
 
 ### 🎯 BIOS → Boot Loader → Kernel → Init → Login → Work
 
-🎯 One-Line Interview Answer
-
-"When we power on a Linux machine, BIOS/UEFI checks hardware, GRUB loads the kernel, the kernel initializes hardware and mounts the filesystem, then systemd starts all services, the login screen appears, and after login the system is ready to use.
+## 🎯 One-Line Interview Answer
+ * When we power on a Linux machine, `BIOS/UEFI` checks hardware, `GRUB` loads the kernel, the kernel initializes `hardware` and mounts the `filesystem`, then `systemd` starts all services
+ * The login screen appears, and after login the system is ready to use.
