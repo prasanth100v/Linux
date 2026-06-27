@@ -1,5 +1,6 @@
 # 🚀✅ Linux Booting Process in a Clear and Simple Way
 <img width="1024" height="1536" alt="ChatGPT Image Jun 27, 2026, 11_42_07 PM" src="https://github.com/user-attachments/assets/44e56e0d-86f5-480a-b20a-5285d51b097c" />
+
 ## 🔋 1. Power On (BIOS/UEFI Stage)
  * 🔹 When you press the power button, the BIOS (`Basic Input/Output System` -- old systems) or UEFI (`Unified Extensible Firmware Interface` -- new systems) runs a POST (`Power-On Self-Test`).
  * 🔹 It checks hardware (`RAM`, `CPU`, `keyboard`) using POST (`Power-On Self Test`).
