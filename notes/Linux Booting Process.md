@@ -30,17 +30,27 @@
  * 🔹 Your shell/desktop is loaded — you can now `run commands` and `applications`.
 
 ---
-      ⬇️
-🐧 Kernel
-      ⬇️
-🔄 Init
-      ⬇️
-👤 Login
-      ⬇️
-💻 Work
-```
 
----
+# 🚀 Linux Boot Flow
+```hcl
+🖥️ BIOS / UEFI
+        ↓
+✅ POST
+        ↓
+🚀 GRUB
+        ↓
+🐧 Linux Kernel
+        ↓
+📦 initramfs / initrd
+        ↓
+⚙️ systemd (PID 1)
+        ↓
+🔄 System Services
+        ↓
+🔐 Login
+        ↓
+💻 User Shell / Desktop
+```
 
 ## 🐧 Linux Boot Process — Interview Cheat Sheet
 | 🔢 **Step** | 🧩 **Component**                | 📖 **Purpose**              | 💡 **What Happens**                                                   |
@@ -50,7 +60,7 @@
 | 3️⃣         | 🚀 **Boot Loader (GRUB)**       | Load the operating system    | Loads the Linux kernel and passes boot parameters                     |
 | 4️⃣         | 🐧 **Linux Kernel**             | Core of the operating system | Initializes hardware, memory, drivers, and mounts the root filesystem |
 | 5️⃣         | 📦 **initramfs / initrd**       | Temporary root filesystem    | Loads essential drivers and prepares the real root filesystem         |
-| 6️⃣         | ⚙️ **systemd (PID 1)**          | System initialization        | Starts and manages system services                                    |
+| 6️⃣         | ⚙️ **systemd (`PID 1`)**        | System initialization        | Starts and manages system services                                    |
 | 7️⃣         | 🔄 **System Services**          | Start background services    | Launches networking, SSH, logging, cron, etc.                         |
 | 8️⃣         | 🔐 **Login**                    | User authentication          | Displays the login prompt or graphical login screen                   |
 | 9️⃣         | 💻 **User Shell / Desktop**     | User session                 | Starts the shell (Bash) or desktop environment                        |
