@@ -50,3 +50,16 @@
 | 🖥️ **Virtual Machine (VM)**  | A virtual computer running Linux                                                     |
 | 📦 **Container**             | Lightweight isolated application environment                                         |
 | 💥 **Kernel Panic**          | Critical system crash                                                                |
+
+
+---
+
+## 🐧 Linux Permission Commands — Interview Cheat Sheet
+
+| 💻 **Command** | 📝 **Full Form**            | 🎯 **Purpose**                                                           | ⚙️ **Syntax**                                          | 💡 **Example**                                            | 🗣️ **Interview Explanation**                                                                                          |
+| -------------- | --------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------ | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `umask`        | **User File Creation Mask** | Sets the **default permissions** for newly created files and directories | `umask <value>`                                        | `umask 022`                                               | *"It defines which permission bits are removed when new files and directories are created."*                           |
+| `chmod`        | **Change Mode**             | Changes the **permissions** of a file or directory                       | `chmod <permissions> <file>`                           | `chmod 755 app.sh`                                        | *"It is used to grant or remove read, write, and execute permissions for the owner, group, and others."*               |
+| `chown`        | **Change Owner**            | Changes the **owner** (and optionally the group) of a file or directory  | `chown <user> <file>`<br>`chown <user>:<group> <file>` | `chown ubuntu app.sh`<br>`chown ubuntu:developers app.sh` | *"It is used to transfer ownership of files or directories to another user, and optionally change the group as well."* |
+| `chgrp`        | **Change Group**            | Changes only the **group ownership** of a file or directory              | `chgrp <group> <file>`                                 | `chgrp developers app.sh`                                 | *"It is used when only the group ownership of a file or directory needs to be changed."*                               |
+
